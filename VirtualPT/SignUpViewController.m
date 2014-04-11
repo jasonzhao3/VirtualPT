@@ -9,9 +9,17 @@
 #import "SignUpViewController.h"
 #import "FUIButton.h"
 #import "UIColor+FlatUI.h"
+
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet FUIButton *cancelBtn;
 @property (weak, nonatomic) IBOutlet FUIButton *createBtn;
+@property (weak, nonatomic) IBOutlet UITextField *userId;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *pwdConfirmation;
+
 
 @end
 
@@ -29,18 +37,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.cancelBtn.buttonColor = [UIColor cloudsColor];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+//    [self.view addGestureRecognizer:tap];
+ //    self.cancelBtn.buttonColor = [UIColor cloudsColor];
 //    self.cancelBtn.cornerRadius = 6.0f;
     // Do any additional setup after loading the view.
 //    [self updateUI];
 }
 
-- (void)updateUI
-{
-    self.cancelBtn.buttonColor = [UIColor cloudsColor];
-    self.cancelBtn.cornerRadius = 6.0f;
+//- (void)dismissKeyboard
+//{
+//    [_userId resignFirstResponder];
+//}
+////
+//- (void)updateUI
+//{
+//    self.cancelBtn.buttonColor = [UIColor cloudsColor];
+//    self.cancelBtn.cornerRadius = 6.0f;
+//}
 
+// function to remove keyboard when tapping anywhere else on the screen
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[self view] endEditing:TRUE];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -71,4 +92,6 @@
 //    self.frostedViewController.contentViewController = navigationController;
 //    [self.frostedViewController hideMenuViewController];
 }
+//- (IBAction)userName:(id)sender {
+//}
 @end

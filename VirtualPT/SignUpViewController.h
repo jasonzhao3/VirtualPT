@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VPTNavigationController.h"
-#import "VPTViewController.h"
+#import "LoginViewController.h"
 
 @interface SignUpViewController : UIViewController
 - (IBAction)cancelSignUp:(id)sender;
