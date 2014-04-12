@@ -11,5 +11,6 @@
 
 @interface VPTHomeViewController : UIViewController
 - (IBAction)showMenu:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end

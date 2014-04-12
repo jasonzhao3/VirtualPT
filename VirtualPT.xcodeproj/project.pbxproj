@@ -11,6 +11,8 @@
 		6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */; };
 		6B089FE718F1CB2B00AEBB12 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE618F1CB2B00AEBB12 /* Motivation.m */; };
 		6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE918F1CB2C00AEBB12 /* User.m */; };
+		6B56200218F8A1760018FDE9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56200118F8A1760018FDE9 /* CoreData.framework */; };
+		6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */; };
 		6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC418EBF1A0009B71ED /* Foundation.framework */; };
 		6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */; };
 		6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC818EBF1A0009B71ED /* UIKit.framework */; };
@@ -76,6 +78,9 @@
 		6B089FE618F1CB2B00AEBB12 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
 		6B089FE818F1CB2B00AEBB12 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6B089FE918F1CB2C00AEBB12 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6B56200118F8A1760018FDE9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
+		6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
 		6B77BDC118EBF1A0009B71ED /* VirtualPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B77BDC418EBF1A0009B71ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -165,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B56200218F8A1760018FDE9 /* CoreData.framework in Frameworks */,
 				6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */,
 				6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */,
 				6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */,
@@ -228,6 +234,7 @@
 		6B77BDC318EBF1A0009B71ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B56200118F8A1760018FDE9 /* CoreData.framework */,
 				6B77BDC418EBF1A0009B71ED /* Foundation.framework */,
 				6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */,
 				6B77BDC818EBF1A0009B71ED /* UIKit.framework */,
@@ -239,6 +246,8 @@
 		6B77BDCA18EBF1A0009B71ED /* VirtualPT */ = {
 			isa = PBXGroup;
 			children = (
+				6B77BDD318EBF1A0009B71ED /* VPTAppDelegate.h */,
+				6B77BDD418EBF1A0009B71ED /* VPTAppDelegate.m */,
 				6B089FCE18F1B68500AEBB12 /* Data Model */,
 				6B089FCF18F1B69700AEBB12 /* View */,
 				6B77BDFD18EBFFD2009B71ED /* Controller */,
@@ -253,8 +262,6 @@
 			children = (
 				6B91A8DE18EE5A6500F36EF1 /* REFrostedViewController */,
 				6B91A89C18EE4B6C00F36EF1 /* Classes */,
-				6B77BDD318EBF1A0009B71ED /* VPTAppDelegate.h */,
-				6B77BDD418EBF1A0009B71ED /* VPTAppDelegate.m */,
 				6B77BDCC18EBF1A0009B71ED /* VirtualPT-Info.plist */,
 				6B77BDCD18EBF1A0009B71ED /* InfoPlist.strings */,
 				6B77BDD018EBF1A0009B71ED /* main.m */,
@@ -284,6 +291,8 @@
 		6B77BDFD18EBFFD2009B71ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */,
+				6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */,
 				6B91A8F718EE658E00F36EF1 /* VPTNavigationController.h */,
 				6B91A8F818EE658E00F36EF1 /* VPTNavigationController.m */,
 				6B91A8DB18EE598A00F36EF1 /* VPTRootViewController.h */,
@@ -501,6 +510,7 @@
 				6B91A89818EE33EC00F36EF1 /* PageController.m in Sources */,
 				6B91A8ED18EE5A6500F36EF1 /* REFrostedViewController.m in Sources */,
 				6B91A8EB18EE5A6500F36EF1 /* RECommonFunctions.m in Sources */,
+				6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */,
 				6B91A8DD18EE598A00F36EF1 /* VPTRootViewController.m in Sources */,
 				6B91A8CF18EE4B6C00F36EF1 /* UIImage+FlatUI.m in Sources */,
 				6B91A8F018EE5A6500F36EF1 /* UIViewController+REFrostedViewController.m in Sources */,

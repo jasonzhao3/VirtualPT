@@ -44,7 +44,7 @@
 - (IBAction)login:(id)sender {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userId == %@", self.userId.text];
     NSArray *result = [self.fetchedUsersArray filteredArrayUsingPredicate:predicate];
-    NSLog (@"finish query user id: %@", result);
+//    NSLog (@"finish query user id: %@", result);
     if (!result || !result.count || ![self validatePassword:(User *)[result objectAtIndex:0]]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"User doesn't exist or password doesn't match!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
