@@ -26,8 +26,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
-    
     self.fetchedUsersArray = [appDelegate getUserList];
+
+    // set delegate to make sure keyboard hide when done editing
+    [self.userId setDelegate:self];
+    [self.password setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,10 +39,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma -- hide keyboard
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self view] endEditing:TRUE];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (IBAction)login:(id)sender {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userId == %@", self.userId.text];

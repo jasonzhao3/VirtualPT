@@ -44,25 +44,13 @@
     self.managedObjectContext = appDelegate.managedObjectContext;
 
     // set delegate for form validation
+    [self.userId setDelegate:self];
+    [self.userName setDelegate:self];
+    [self.email setDelegate:self];
     [self.password setDelegate:self];
     [self.pwdConfirmation setDelegate:self];
-    [self.email setDelegate:self];
-    
-    
+
 //    [self updateUI];
-}
-
-
-//- (void)updateUI
-//{
-//    self.cancelBtn.buttonColor = [UIColor cloudsColor];
-//    self.cancelBtn.cornerRadius = 6.0f;
-//}
-
-// function to remove keyboard when tapping anywhere else on the screen
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [[self view] endEditing:TRUE];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,16 +59,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Navigation
 
@@ -119,6 +97,18 @@
 
 }
 
+#pragma mark - textField delegation
+// Hide keyboard when done editing
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+// function to remove keyboard when tapping anywhere else on the screen
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[self view] endEditing:TRUE];
+}
 
 // delegate method for form textField validation
 - (void)textFieldDidEndEditing:(UITextField *)textField {
