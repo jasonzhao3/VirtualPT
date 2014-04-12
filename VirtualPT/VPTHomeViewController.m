@@ -44,8 +44,7 @@
     {
         // Yes, do something
         NSLog(@"clicked yes!");
-        LoginViewController *lc = [[UIStoryboard storyboardWithName:@"LoginStoryBoard" bundle:nil]
-                                        instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        LoginViewController *lc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
         [self.navigationController pushViewController:lc animated:YES];
 
 //        [self.navigationController popViewControllerAnimated:YES];
