@@ -9,6 +9,8 @@
 #import "SignUpViewController.h"
 #import "FUIButton.h"
 #import "UIColor+FlatUI.h"
+#import "VPTAppDelegate.h"
+#import "user.h"
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet FUIButton *cancelBtn;
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *pwdConfirmation;
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -36,20 +39,20 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-//    [self.view addGestureRecognizer:tap];
- //    self.cancelBtn.buttonColor = [UIColor cloudsColor];
-//    self.cancelBtn.cornerRadius = 6.0f;
-    // Do any additional setup after loading the view.
+    [super viewDidLoad];// Do any additional setup after loading the view.
+    VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
+
+    // set delegate for form validation
+    [self.password setDelegate:self];
+    [self.pwdConfirmation setDelegate:self];
+    [self.email setDelegate:self];
+    
+    
 //    [self updateUI];
 }
 
-//- (void)dismissKeyboard
-//{
-//    [_userId resignFirstResponder];
-//}
-////
+
 //- (void)updateUI
 //{
 //    self.cancelBtn.buttonColor = [UIColor cloudsColor];
@@ -79,19 +82,75 @@
 }
 */
 
+#pragma mark - Navigation
+
 - (IBAction)cancelSignUp:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-//    
-//    VPTNavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
-//    
-//    VPTViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-//    
-//    navigationController.viewControllers = @[loginViewController];
-//    
-//    self.frostedViewController.contentViewController = navigationController;
-//    [self.frostedViewController hideMenuViewController];
 }
-//- (IBAction)userName:(id)sender {
-//}
+
+- (IBAction)createUser:(id)sender {
+    
+    // Add Entry to PhoneBook Data base and reset all fields
+    if (![self validateFields]) {
+        return;
+    }
+    
+    //TODO: validate existed account
+    User * newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User"
+                                                   inManagedObjectContext:self.managedObjectContext];
+    // set up each field
+    newUser.userId = self.userId.text;
+    newUser.userName = self.userName.text;
+    newUser.email = self.email.text;
+    newUser.password = self.password.text;
+    newUser.timestamp = [NSDate date];
+    
+    //  save to database
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    } else {
+        NSLog(@"save successfully: %@!", newUser);
+    }
+    
+    [self.view endEditing:YES];
+    [self performSegueWithIdentifier:@"createSegue" sender:nil];
+
+}
+
+
+// delegate method for form textField validation
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField == self.email) {
+        NSLog(@"come to validate email");
+        if (![self validateEmail : textField.text]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter a valid email address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    } else if (textField == self.pwdConfirmation) {
+        if (![textField.text isEqualToString: self.password.text]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Passwords don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+}
+
+// email address validation helper function
+- (BOOL)validateEmail: (NSString *) candidate {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex]; //  return 0;
+    return [emailTest evaluateWithObject:candidate];
+}
+
+- (BOOL)validateFields {
+    if ([self.userId.text length] == 0 || [self.userName.text length] == 0 || [self.email.text length] == 0 || [self.password.text length] == 0 || [self.pwdConfirmation.text length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error: Empty field exists!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return false;
+    }
+    return true;
+}
+
+
 @end

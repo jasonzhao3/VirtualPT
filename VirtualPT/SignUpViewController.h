@@ -10,7 +10,8 @@
 #import "VPTNavigationController.h"
 #import "LoginViewController.h"
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController<UITextFieldDelegate>
 - (IBAction)cancelSignUp:(id)sender;
+- (IBAction)createUser:(id)sender;
 
 @end

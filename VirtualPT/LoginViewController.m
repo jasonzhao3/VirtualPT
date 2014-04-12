@@ -7,9 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
+#import "VPTAppDelegate.h"
 
 @interface LoginViewController ()
-
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
 
 @implementation LoginViewController
@@ -18,6 +20,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
