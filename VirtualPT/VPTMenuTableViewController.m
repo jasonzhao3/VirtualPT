@@ -19,6 +19,7 @@
 #import "VPTHomeViewController.h"
 #import "VPTNavigationController.h"
 #import "TimerViewController.h"
+#import "ExerciseTableViewController.h"
 
 @interface VPTMenuTableViewController ()
 
@@ -26,11 +27,7 @@
 
 @implementation VPTMenuTableViewController
 @synthesize tasksArray;
-//- (void)setTasksArray:(NSArray *)tasksArray
-//{
-//    _tasksArray = tasksArray;
-//    
-//}
+
 
 - (void)viewDidLoad
 {
@@ -170,10 +167,13 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         VPTHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
+    }  else if (indexPath.section == 0 && indexPath.row == 2){
+        ExerciseTableViewController *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"exerciseController"];
+        navigationController.viewControllers = @[exerciseController];
     } else if (indexPath.section == 0 && indexPath.row == 5) {
         TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
         navigationController.viewControllers = @[timerViewController];
-    } else {
+    }else {
         PageController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageController"];
         navigationController.viewControllers = @[pageViewController];
     }

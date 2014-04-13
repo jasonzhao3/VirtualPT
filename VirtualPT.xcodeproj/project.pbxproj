@@ -14,6 +14,10 @@
 		6B56200218F8A1760018FDE9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56200118F8A1760018FDE9 /* CoreData.framework */; };
 		6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */; };
 		6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9E618F9F43800B22E01 /* TimerViewController.m */; };
+		6B5BD9EB18FA4EA300B22E01 /* ExerciseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */; };
+		6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */; };
+		6B5BD9F418FB08E600B22E01 /* KneeFlextion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */; };
+		6B5BD9F618FB4E4000B22E01 /* SAQ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F518FB4E4000B22E01 /* SAQ.mp4 */; };
 		6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC418EBF1A0009B71ED /* Foundation.framework */; };
 		6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */; };
 		6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC818EBF1A0009B71ED /* UIKit.framework */; };
@@ -84,6 +88,12 @@
 		6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
 		6B5BD9E518F9F43800B22E01 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		6B5BD9E618F9F43800B22E01 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		6B5BD9E918FA4EA300B22E01 /* ExerciseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewController.h; sourceTree = "<group>"; };
+		6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewController.m; sourceTree = "<group>"; };
+		6B5BD9EF18FB01BE00B22E01 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = KneeFlextion.mp4; sourceTree = "<group>"; };
+		6B5BD9F518FB4E4000B22E01 /* SAQ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SAQ.mp4; sourceTree = "<group>"; };
 		6B77BDC118EBF1A0009B71ED /* VirtualPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B77BDC418EBF1A0009B71ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,10 +225,48 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		6B5BD9E818FA4C6700B22E01 /* FlowControl */ = {
+			isa = PBXGroup;
+			children = (
+				6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */,
+				6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */,
+				6B91A8F718EE658E00F36EF1 /* VPTNavigationController.h */,
+				6B91A8F818EE658E00F36EF1 /* VPTNavigationController.m */,
+				6B91A8DB18EE598A00F36EF1 /* VPTRootViewController.h */,
+				6B91A8DC18EE598A00F36EF1 /* VPTRootViewController.m */,
+				6B91A8F118EE5C3400F36EF1 /* VPTHomeViewController.h */,
+				6B91A8F218EE5C3400F36EF1 /* VPTHomeViewController.m */,
+				6B91A8D818EE4CBE00F36EF1 /* SignUpViewController.h */,
+				6B91A8D918EE4CBE00F36EF1 /* SignUpViewController.m */,
+			);
+			name = FlowControl;
+			sourceTree = "<group>";
+		};
+		6B5BD9EC18FA4EAD00B22E01 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				6B5BD9E918FA4EA300B22E01 /* ExerciseTableViewController.h */,
+				6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */,
+				6B5BD9EF18FB01BE00B22E01 /* VideoPlayerViewController.h */,
+				6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		6B5BD9F218FB08D700B22E01 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				6B5BD9F518FB4E4000B22E01 /* SAQ.mp4 */,
+				6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */,
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
 		6B77BDB818EBF1A0009B71ED = {
 			isa = PBXGroup;
 			children = (
 				6B77BDCA18EBF1A0009B71ED /* VirtualPT */,
+				6B5BD9F218FB08D700B22E01 /* video */,
 				6B77BDE918EBF1A0009B71ED /* VirtualPTTests */,
 				6B77BDC318EBF1A0009B71ED /* Frameworks */,
 				6B77BDC218EBF1A0009B71ED /* Products */,
@@ -294,16 +342,8 @@
 		6B77BDFD18EBFFD2009B71ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */,
-				6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */,
-				6B91A8F718EE658E00F36EF1 /* VPTNavigationController.h */,
-				6B91A8F818EE658E00F36EF1 /* VPTNavigationController.m */,
-				6B91A8DB18EE598A00F36EF1 /* VPTRootViewController.h */,
-				6B91A8DC18EE598A00F36EF1 /* VPTRootViewController.m */,
-				6B91A8F118EE5C3400F36EF1 /* VPTHomeViewController.h */,
-				6B91A8F218EE5C3400F36EF1 /* VPTHomeViewController.m */,
-				6B91A8D818EE4CBE00F36EF1 /* SignUpViewController.h */,
-				6B91A8D918EE4CBE00F36EF1 /* SignUpViewController.m */,
+				6B5BD9E818FA4C6700B22E01 /* FlowControl */,
+				6B5BD9EC18FA4EAD00B22E01 /* Exercise */,
 				6B91A89618EE33EC00F36EF1 /* PageController.h */,
 				6B91A89718EE33EC00F36EF1 /* PageController.m */,
 				6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */,
@@ -468,7 +508,9 @@
 			files = (
 				6B77BDDD18EBF1A0009B71ED /* Images.xcassets in Resources */,
 				6B77BDCF18EBF1A0009B71ED /* InfoPlist.strings in Resources */,
+				6B5BD9F618FB4E4000B22E01 /* SAQ.mp4 in Resources */,
 				6B77BDD818EBF1A0009B71ED /* Main.storyboard in Resources */,
+				6B5BD9F418FB08E600B22E01 /* KneeFlextion.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,11 +544,13 @@
 				6B91A8CC18EE4B6C00F36EF1 /* UIBarButtonItem+FlatUI.m in Sources */,
 				6B77BDFC18EBFFC8009B71ED /* VPTMenuTableViewController.m in Sources */,
 				6B91A8D318EE4B6C00F36EF1 /* UISlider+FlatUI.m in Sources */,
+				6B5BD9EB18FA4EA300B22E01 /* ExerciseTableViewController.m in Sources */,
 				6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */,
 				6B91A8DA18EE4CBE00F36EF1 /* SignUpViewController.m in Sources */,
 				6B91A8CB18EE4B6C00F36EF1 /* FUITextField.m in Sources */,
 				6B91A8EC18EE5A6500F36EF1 /* REFrostedContainerViewController.m in Sources */,
 				6B91A8C918EE4B6C00F36EF1 /* FUISegmentedControl.m in Sources */,
+				6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */,
 				6B91A8D518EE4B6C00F36EF1 /* UITabBar+FlatUI.m in Sources */,
 				6B91A8D718EE4B6C00F36EF1 /* UIToolbar+FlatUI.m in Sources */,
 				6B91A8C518EE4B6C00F36EF1 /* FUIAlertView.m in Sources */,
