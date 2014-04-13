@@ -7,6 +7,7 @@
 //
 
 #import "PageController.h"
+#import "LoginViewController.h"
 
 @interface PageController ()
 
@@ -56,6 +57,37 @@
     //
     [self.frostedViewController presentMenuViewController];
 
+}
+
+- (IBAction)logout:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] init];
+    
+    [alert setTitle:@"Confirm"];
+    [alert setMessage:@"Do you really want to logout?"];
+    [alert setDelegate:self];
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    [alert show];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        // Yes, do something
+        NSLog(@"clicked yes!");
+        LoginViewController *lc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginController"];
+        [self.navigationController pushViewController:lc animated:YES];
+        
+        //        [self.navigationController popViewControllerAnimated:YES];
+        //        [self performSegueWithIdentifier:@"backLoginSegue" sender:nil];
+    }
+    else if (buttonIndex == 1)
+    {
+        // No
+        NSLog(@"clicked no!");
+    }
 }
 
 

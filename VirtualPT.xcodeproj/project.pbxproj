@@ -13,6 +13,7 @@
 		6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE918F1CB2C00AEBB12 /* User.m */; };
 		6B56200218F8A1760018FDE9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56200118F8A1760018FDE9 /* CoreData.framework */; };
 		6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */; };
+		6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9E618F9F43800B22E01 /* TimerViewController.m */; };
 		6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC418EBF1A0009B71ED /* Foundation.framework */; };
 		6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */; };
 		6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC818EBF1A0009B71ED /* UIKit.framework */; };
@@ -81,6 +82,8 @@
 		6B56200118F8A1760018FDE9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
 		6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
+		6B5BD9E518F9F43800B22E01 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		6B5BD9E618F9F43800B22E01 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		6B77BDC118EBF1A0009B71ED /* VirtualPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B77BDC418EBF1A0009B71ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -305,6 +308,8 @@
 				6B91A89718EE33EC00F36EF1 /* PageController.m */,
 				6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */,
 				6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */,
+				6B5BD9E518F9F43800B22E01 /* TimerViewController.h */,
+				6B5BD9E618F9F43800B22E01 /* TimerViewController.m */,
 				6B77BDD918EBF1A0009B71ED /* LoginViewController.h */,
 				6B77BDDA18EBF1A0009B71ED /* LoginViewController.m */,
 			);
@@ -514,6 +519,7 @@
 				6B91A8DD18EE598A00F36EF1 /* VPTRootViewController.m in Sources */,
 				6B91A8CF18EE4B6C00F36EF1 /* UIImage+FlatUI.m in Sources */,
 				6B91A8F018EE5A6500F36EF1 /* UIViewController+REFrostedViewController.m in Sources */,
+				6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */,
 				6B91A8F918EE658E00F36EF1 /* VPTNavigationController.m in Sources */,
 				6B91A8D418EE4B6C00F36EF1 /* UIStepper+FlatUI.m in Sources */,
 				6B91A8D218EE4B6C00F36EF1 /* UIProgressView+FlatUI.m in Sources */,

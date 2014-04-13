@@ -18,7 +18,7 @@
 #import "PageController.h"
 #import "VPTHomeViewController.h"
 #import "VPTNavigationController.h"
-
+#import "TimerViewController.h"
 
 @interface VPTMenuTableViewController ()
 
@@ -69,7 +69,7 @@
     });
 
 
-    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"My Exercises Plan", @"My Progress Tracker", @"Daily Task", nil];
+    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"My Exercises Plan", @"My Progress Tracker", @"Daily Task", @"Timer", nil];
 }
 
 #pragma mark - Table view data source
@@ -161,7 +161,7 @@
 
 
 #pragma mark -- controller switch
-
+// It seems that we don't even need segue in storyboard -- this controller switch depends on controller identifier rather than segue
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -170,12 +170,12 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         VPTHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 5) {
+        TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
+        navigationController.viewControllers = @[timerViewController];
     } else {
         PageController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageController"];
         navigationController.viewControllers = @[pageViewController];
-        
-//        DEMOSecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];
-//        navigationController.viewControllers = @[secondViewController];
     }
     
     self.frostedViewController.contentViewController = navigationController;
