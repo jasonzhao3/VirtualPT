@@ -7,6 +7,7 @@
 //
 
 #import "ProgressTableViewController.h"
+#import "ChartViewController.h"
 
 @interface ProgressTableViewController ()
 
@@ -100,16 +101,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"progressSegue"])
+    {
+        // Get reference to the destination view controller
+        ChartViewController *cvc = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        // Pass any objects to the view controller here, like...
+        [cvc setTitleString: [self.progressList objectAtIndex:indexPath.row]];
+    }
 }
-*/
+
 
 - (IBAction)showMenu:(id)sender {
     [self.view endEditing:YES];

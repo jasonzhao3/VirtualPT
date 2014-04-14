@@ -9,11 +9,10 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "PNChartDelegate.h"
 
-#define chartMargin     10
-#define xLabelMargin    15
-#define yLabelMargin    15
-#define yLabelHeight    11
+
+
 
 @interface PNLineChart : UIView
 
@@ -21,21 +20,39 @@
  * This method will call and troke the line in animation
  */
 
--(void)strokeChart;
+- (void)strokeChart;
+
+@property(nonatomic,retain) id<PNChartDelegate> delegate;
 
 @property (strong, nonatomic) NSArray * xLabels;
 
 @property (strong, nonatomic) NSArray * yLabels;
 
-@property (strong, nonatomic) NSArray * yValues;
+/**
+ * Array of `LineChartData` objects, one for each line.
+ */
+@property (strong, nonatomic) NSArray *chartData;
+
+@property (strong, nonatomic) NSMutableArray * pathPoints;
 
 @property (nonatomic) CGFloat xLabelWidth;
 
-@property (nonatomic) int yValueMax;
+@property (nonatomic) CGFloat yValueMax;
 
-@property (nonatomic,strong) CAShapeLayer * chartLine;
+@property (nonatomic) CGFloat yValueMin;
 
-@property (nonatomic, strong) UIColor * strokeColor;
+@property (nonatomic) NSInteger yLabelNum;
 
+@property (nonatomic) CGFloat yLabelHeight;
+
+@property (nonatomic) CGFloat chartCavanHeight;
+
+@property (nonatomic) CGFloat chartCavanWidth;
+
+@property (nonatomic) CGFloat chartMargin;
+
+
+
+@property (nonatomic) BOOL showLabel;
 
 @end

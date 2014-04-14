@@ -10,5 +10,6 @@
 
 @interface ChartViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *chartScrollView;
+@property (nonatomic, strong) NSString *titleString;
 
 @end

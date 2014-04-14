@@ -67,7 +67,7 @@
     });
 
 
-    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"My Exercises Plan", @"My Progress Tracker", @"Daily Task", @"Timer", nil];
+    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"Exercises Library", @"Progress Tracker", @"Daily Task", @"Timer", nil];
 }
 
 #pragma mark - Table view data source
@@ -97,27 +97,6 @@
     return cell;
 }
 
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//    
-//    if ([sender isKindOfClass:[UITableViewCell class]]) {
-//        // find out which row in which section we're seguing from
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        if (indexPath) {
-//            // found it ... are we doing the Display Photo segue?
-//            if ([segue.identifier isEqualToString:@"MenueCellSegue"]) {
-//                // yes ... is the destination an ImageViewController?
-//                if ([segue.destinationViewController isKindOfClass:[MotivationController class]]) {
-//                    // yes ... then we know how to prepare for that segue!
-//                    NSLog (@"now is in motivation");
-//                }
-//            }
-//        }
-//    }
-//}
 
 #pragma mark - TODO: view effect
 

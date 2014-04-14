@@ -32,7 +32,7 @@
     isRunning = false;
     duration = 0.0;
     self.timerPicker.countDownDuration = 300.0f;
-    
+//    [self.runButton setContentEdgeInsets:UIEdgeInsetsMake(2, 6, 2, 6)];
 }
 
 - (void)didReceiveMemoryWarning
