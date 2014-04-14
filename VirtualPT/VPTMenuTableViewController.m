@@ -20,6 +20,7 @@
 #import "VPTNavigationController.h"
 #import "TimerViewController.h"
 #import "ExerciseTableViewController.h"
+#import "ProgressTableViewController.h"
 
 @interface VPTMenuTableViewController ()
 
@@ -167,10 +168,13 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         VPTHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
-    }  else if (indexPath.section == 0 && indexPath.row == 2){
+    } else if (indexPath.section == 0 && indexPath.row == 2){
         ExerciseTableViewController *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"exerciseController"];
         navigationController.viewControllers = @[exerciseController];
-    } else if (indexPath.section == 0 && indexPath.row == 5) {
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
+        ProgressTableViewController *progressController = [self.storyboard instantiateViewControllerWithIdentifier:@"progressController"];
+        navigationController.viewControllers = @[progressController];
+    }else if (indexPath.section == 0 && indexPath.row == 5) {
         TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
         navigationController.viewControllers = @[timerViewController];
     }else {

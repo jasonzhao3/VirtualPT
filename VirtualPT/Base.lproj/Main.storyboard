@@ -196,6 +196,7 @@
                         <segue destination="RKF-KK-JGV" kind="push" identifier="TaskSegue" id="smp-ct-c10"/>
                         <segue destination="6t3-YZ-las" kind="push" id="mVJ-5r-Ews"/>
                         <segue destination="8Vf-WU-o6I" kind="push" identifier="exerciseSegue" id="eUV-NZ-BhZ"/>
+                        <segue destination="ULX-E3-DJo" kind="push" id="jC0-MY-tPu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9R-KM-upb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,12 +360,144 @@
                                 <action selector="showMenu:" destination="8Vf-WU-o6I" id="OBk-Fm-peA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ARC-4R-tXv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ARC-4R-tXv">
+                            <connections>
+                                <segue destination="Zae-xE-fS4" kind="push" identifier="addExerciseSegue" id="1I3-m6-I5C"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hu0-44-Ogk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="1113"/>
+            <point key="canvasLocation" x="850" y="445"/>
+        </scene>
+        <!--Progress Table View Controller-->
+        <scene sceneID="xr6-ak-gLD">
+            <objects>
+                <tableViewController storyboardIdentifier="progressController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ULX-E3-DJo" customClass="ProgressTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="68a-zA-a5s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="progressCell" id="ggY-JI-QsY">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggY-JI-QsY" id="pvp-20-0vW">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GnU-6d-A2c" kind="push" id="6TC-zD-fPl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ULX-E3-DJo" id="UNf-02-vuk"/>
+                            <outlet property="delegate" destination="ULX-E3-DJo" id="fDG-tP-B1Q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="u0Y-7B-7GB">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="A5r-xL-G1o">
+                            <connections>
+                                <action selector="showMenu:" destination="ULX-E3-DJo" id="yCp-op-EmI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mtk-fw-xEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="1106"/>
+        </scene>
+        <!--Chart View Controller - Daily Hours Plot-->
+        <scene sceneID="dKc-6o-BKU">
+            <objects>
+                <viewController id="GnU-6d-A2c" customClass="ChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TaE-Gu-eqv"/>
+                        <viewControllerLayoutGuide type="bottom" id="SqL-xz-51D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ACg-aC-rHD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tm4-hr-ebb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Daily Hours Plot" id="yMR-ia-dGN"/>
+                    <connections>
+                        <outlet property="chartScrollView" destination="tm4-hr-ebb" id="jZn-dr-yYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OkG-Lb-YRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="1106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z4n-yN-I68">
+            <objects>
+                <viewController id="Zae-xE-fS4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vGg-ZO-Xwu"/>
+                        <viewControllerLayoutGuide type="bottom" id="p0q-Z6-o3a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZyF-Bt-Nkr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Exercise Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfa-Xf-Ccq">
+                                <rect key="frame" x="81" y="107" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="Brief Introduction about this exercise" translatesAutoresizingMaskIntoConstraints="NO" id="0q7-ih-Cek">
+                                <rect key="frame" x="81" y="268" width="168" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image or Video URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80B-iK-YuW">
+                                <rect key="frame" x="81" y="145" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ8-vI-wj6">
+                                <rect key="frame" x="81" y="183" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hold" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-Ul-eG4">
+                                <rect key="frame" x="81" y="221" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Exercise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-3f-l5w">
+                                <rect key="frame" x="115" y="34" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem id="rDH-gz-HYV"/>
+                        <barButtonItem id="9OS-20-Qj6"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmK-qT-nx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="-239"/>
         </scene>
         <!--Video Player View Controller - Knee Flexation-->
         <scene sceneID="4ej-vJ-Yik">
@@ -452,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D51-pf-prM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="1113"/>
+            <point key="canvasLocation" x="1346" y="445"/>
         </scene>
         <!--Page Controller - My Motivation-->
         <scene sceneID="MZT-7l-nLT">
@@ -584,7 +717,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2C-OM-apy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="442"/>
+            <point key="canvasLocation" x="850" y="1780"/>
         </scene>
         <!--Users Table View Controller-->
         <scene sceneID="SmD-zW-vAp">

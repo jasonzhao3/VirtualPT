@@ -18,6 +18,15 @@
 		6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */; };
 		6B5BD9F418FB08E600B22E01 /* KneeFlextion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */; };
 		6B5BD9F618FB4E4000B22E01 /* SAQ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F518FB4E4000B22E01 /* SAQ.mp4 */; };
+		6B5BD9F918FB531E00B22E01 /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */; };
+		6B5BD9FC18FB58D600B22E01 /* ProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9FB18FB58D600B22E01 /* ProgressTableViewController.m */; };
+		6B5BDA2918FB825A00B22E01 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA1E18FB825A00B22E01 /* PNBar.m */; };
+		6B5BDA2A18FB825A00B22E01 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA2018FB825A00B22E01 /* PNBarChart.m */; };
+		6B5BDA2B18FB825A00B22E01 /* PNChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA2218FB825A00B22E01 /* PNChart.m */; };
+		6B5BDA2C18FB825A00B22E01 /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA2418FB825A00B22E01 /* PNChartLabel.m */; };
+		6B5BDA2D18FB825A00B22E01 /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA2618FB825A00B22E01 /* PNColor.m */; };
+		6B5BDA2E18FB825A00B22E01 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA2818FB825A00B22E01 /* PNLineChart.m */; };
+		6B5BDA3118FB828D00B22E01 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA3018FB828D00B22E01 /* ChartViewController.m */; };
 		6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC418EBF1A0009B71ED /* Foundation.framework */; };
 		6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */; };
 		6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDC818EBF1A0009B71ED /* UIKit.framework */; };
@@ -94,6 +103,24 @@
 		6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = KneeFlextion.mp4; sourceTree = "<group>"; };
 		6B5BD9F518FB4E4000B22E01 /* SAQ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SAQ.mp4; sourceTree = "<group>"; };
+		6B5BD9F718FB531E00B22E01 /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
+		6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
+		6B5BD9FA18FB58D600B22E01 /* ProgressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressTableViewController.h; sourceTree = "<group>"; };
+		6B5BD9FB18FB58D600B22E01 /* ProgressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressTableViewController.m; sourceTree = "<group>"; };
+		6B5BDA1D18FB825A00B22E01 /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
+		6B5BDA1E18FB825A00B22E01 /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
+		6B5BDA1F18FB825A00B22E01 /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
+		6B5BDA2018FB825A00B22E01 /* PNBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBarChart.m; sourceTree = "<group>"; };
+		6B5BDA2118FB825A00B22E01 /* PNChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChart.h; sourceTree = "<group>"; };
+		6B5BDA2218FB825A00B22E01 /* PNChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNChart.m; sourceTree = "<group>"; };
+		6B5BDA2318FB825A00B22E01 /* PNChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChartLabel.h; sourceTree = "<group>"; };
+		6B5BDA2418FB825A00B22E01 /* PNChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNChartLabel.m; sourceTree = "<group>"; };
+		6B5BDA2518FB825A00B22E01 /* PNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNColor.h; sourceTree = "<group>"; };
+		6B5BDA2618FB825A00B22E01 /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNColor.m; sourceTree = "<group>"; };
+		6B5BDA2718FB825A00B22E01 /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChart.h; sourceTree = "<group>"; };
+		6B5BDA2818FB825A00B22E01 /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChart.m; sourceTree = "<group>"; };
+		6B5BDA2F18FB828D00B22E01 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		6B5BDA3018FB828D00B22E01 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
 		6B77BDC118EBF1A0009B71ED /* VirtualPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B77BDC418EBF1A0009B71ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -245,6 +272,8 @@
 		6B5BD9EC18FA4EAD00B22E01 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				6B5BD9F718FB531E00B22E01 /* AddExerciseViewController.h */,
+				6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */,
 				6B5BD9E918FA4EA300B22E01 /* ExerciseTableViewController.h */,
 				6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */,
 				6B5BD9EF18FB01BE00B22E01 /* VideoPlayerViewController.h */,
@@ -260,6 +289,36 @@
 				6B5BD9F318FB08E600B22E01 /* KneeFlextion.mp4 */,
 			);
 			name = video;
+			sourceTree = "<group>";
+		};
+		6B5BD9FD18FB58DF00B22E01 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				6B5BD9FA18FB58D600B22E01 /* ProgressTableViewController.h */,
+				6B5BD9FB18FB58D600B22E01 /* ProgressTableViewController.m */,
+				6B5BDA2F18FB828D00B22E01 /* ChartViewController.h */,
+				6B5BDA3018FB828D00B22E01 /* ChartViewController.m */,
+			);
+			name = Progress;
+			sourceTree = "<group>";
+		};
+		6B5BDA1C18FB825A00B22E01 /* PNChart */ = {
+			isa = PBXGroup;
+			children = (
+				6B5BDA1D18FB825A00B22E01 /* PNBar.h */,
+				6B5BDA1E18FB825A00B22E01 /* PNBar.m */,
+				6B5BDA1F18FB825A00B22E01 /* PNBarChart.h */,
+				6B5BDA2018FB825A00B22E01 /* PNBarChart.m */,
+				6B5BDA2118FB825A00B22E01 /* PNChart.h */,
+				6B5BDA2218FB825A00B22E01 /* PNChart.m */,
+				6B5BDA2318FB825A00B22E01 /* PNChartLabel.h */,
+				6B5BDA2418FB825A00B22E01 /* PNChartLabel.m */,
+				6B5BDA2518FB825A00B22E01 /* PNColor.h */,
+				6B5BDA2618FB825A00B22E01 /* PNColor.m */,
+				6B5BDA2718FB825A00B22E01 /* PNLineChart.h */,
+				6B5BDA2818FB825A00B22E01 /* PNLineChart.m */,
+			);
+			path = PNChart;
 			sourceTree = "<group>";
 		};
 		6B77BDB818EBF1A0009B71ED = {
@@ -311,6 +370,7 @@
 		6B77BDCB18EBF1A0009B71ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B5BDA1C18FB825A00B22E01 /* PNChart */,
 				6B91A8DE18EE5A6500F36EF1 /* REFrostedViewController */,
 				6B91A89C18EE4B6C00F36EF1 /* Classes */,
 				6B77BDCC18EBF1A0009B71ED /* VirtualPT-Info.plist */,
@@ -343,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5BD9E818FA4C6700B22E01 /* FlowControl */,
+				6B5BD9FD18FB58DF00B22E01 /* Progress */,
 				6B5BD9EC18FA4EAD00B22E01 /* Exercise */,
 				6B91A89618EE33EC00F36EF1 /* PageController.h */,
 				6B91A89718EE33EC00F36EF1 /* PageController.m */,
@@ -533,21 +594,27 @@
 				6B089FCD18F1B67600AEBB12 /* Users.xcdatamodeld in Sources */,
 				6B91A8D018EE4B6C00F36EF1 /* UINavigationBar+FlatUI.m in Sources */,
 				6B91A8C618EE4B6C00F36EF1 /* FUIButton.m in Sources */,
+				6B5BD9F918FB531E00B22E01 /* AddExerciseViewController.m in Sources */,
 				6B91A8EF18EE5A6500F36EF1 /* UIView+REFrostedViewController.m in Sources */,
 				6B91A8C718EE4B6C00F36EF1 /* FUICellBackgroundView.m in Sources */,
+				6B5BDA2D18FB825A00B22E01 /* PNColor.m in Sources */,
 				6B77BDD118EBF1A0009B71ED /* main.m in Sources */,
 				6B91A8D118EE4B6C00F36EF1 /* UIPopoverController+FlatUI.m in Sources */,
+				6B5BDA2C18FB825A00B22E01 /* PNChartLabel.m in Sources */,
 				6B91A8C818EE4B6C00F36EF1 /* FUIPopoverBackgroundView.m in Sources */,
 				6B91A8D618EE4B6C00F36EF1 /* UITableViewCell+FlatUI.m in Sources */,
 				6B91A8CA18EE4B6C00F36EF1 /* FUISwitch.m in Sources */,
 				6B089FE718F1CB2B00AEBB12 /* Motivation.m in Sources */,
 				6B91A8CC18EE4B6C00F36EF1 /* UIBarButtonItem+FlatUI.m in Sources */,
+				6B5BDA3118FB828D00B22E01 /* ChartViewController.m in Sources */,
 				6B77BDFC18EBFFC8009B71ED /* VPTMenuTableViewController.m in Sources */,
 				6B91A8D318EE4B6C00F36EF1 /* UISlider+FlatUI.m in Sources */,
 				6B5BD9EB18FA4EA300B22E01 /* ExerciseTableViewController.m in Sources */,
 				6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */,
 				6B91A8DA18EE4CBE00F36EF1 /* SignUpViewController.m in Sources */,
 				6B91A8CB18EE4B6C00F36EF1 /* FUITextField.m in Sources */,
+				6B5BDA2A18FB825A00B22E01 /* PNBarChart.m in Sources */,
+				6B5BD9FC18FB58D600B22E01 /* ProgressTableViewController.m in Sources */,
 				6B91A8EC18EE5A6500F36EF1 /* REFrostedContainerViewController.m in Sources */,
 				6B91A8C918EE4B6C00F36EF1 /* FUISegmentedControl.m in Sources */,
 				6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */,
@@ -557,17 +624,20 @@
 				6B91A8CD18EE4B6C00F36EF1 /* UIColor+FlatUI.m in Sources */,
 				6B91A8EE18EE5A6500F36EF1 /* UIImage+REFrostedViewController.m in Sources */,
 				6B91A89818EE33EC00F36EF1 /* PageController.m in Sources */,
+				6B5BDA2918FB825A00B22E01 /* PNBar.m in Sources */,
 				6B91A8ED18EE5A6500F36EF1 /* REFrostedViewController.m in Sources */,
 				6B91A8EB18EE5A6500F36EF1 /* RECommonFunctions.m in Sources */,
 				6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */,
 				6B91A8DD18EE598A00F36EF1 /* VPTRootViewController.m in Sources */,
 				6B91A8CF18EE4B6C00F36EF1 /* UIImage+FlatUI.m in Sources */,
 				6B91A8F018EE5A6500F36EF1 /* UIViewController+REFrostedViewController.m in Sources */,
+				6B5BDA2E18FB825A00B22E01 /* PNLineChart.m in Sources */,
 				6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */,
 				6B91A8F918EE658E00F36EF1 /* VPTNavigationController.m in Sources */,
 				6B91A8D418EE4B6C00F36EF1 /* UIStepper+FlatUI.m in Sources */,
 				6B91A8D218EE4B6C00F36EF1 /* UIProgressView+FlatUI.m in Sources */,
 				6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */,
+				6B5BDA2B18FB825A00B22E01 /* PNChart.m in Sources */,
 				6B77BDD518EBF1A0009B71ED /* VPTAppDelegate.m in Sources */,
 				6B77BDDB18EBF1A0009B71ED /* LoginViewController.m in Sources */,
 				6B91A8CE18EE4B6C00F36EF1 /* UIFont+FlatUI.m in Sources */,

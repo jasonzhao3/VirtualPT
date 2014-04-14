@@ -135,7 +135,7 @@
 
 //- (void)prepareVideoViewController:(VideoPlayerViewController *)ivc toDisplayVideo:(NSDictionary *)videoJson
 //{
-//    ivc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+//    ivc.videoURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
 //    ivc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
 //}
 
