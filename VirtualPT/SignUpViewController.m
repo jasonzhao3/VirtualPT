@@ -67,8 +67,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)addProfile:(id)sender {
+   [self performSegueWithIdentifier:@"createSegue" sender:nil];
+}
+
 - (IBAction)createUser:(id)sender {
-    
     // Add Entry to PhoneBook Data base and reset all fields
     if (![self validateFields]) {
         return;
@@ -93,9 +96,10 @@
     }
     
     [self.view endEditing:YES];
-    [self performSegueWithIdentifier:@"createSegue" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+
 
 #pragma mark - textField delegation
 // Hide keyboard when done editing

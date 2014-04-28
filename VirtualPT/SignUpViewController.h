@@ -12,6 +12,8 @@
 
 @interface SignUpViewController : UIViewController<UITextFieldDelegate>
 - (IBAction)cancelSignUp:(id)sender;
+- (IBAction)addProfile:(id)sender;
 - (IBAction)createUser:(id)sender;
+
 
 @end

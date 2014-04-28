@@ -21,6 +21,7 @@
 #import "TimerViewController.h"
 #import "ExerciseTableViewController.h"
 #import "ProgressTableViewController.h"
+#import "RatingViewController.h"
 
 @interface VPTMenuTableViewController ()
 
@@ -156,9 +157,12 @@
     }else if (indexPath.section == 0 && indexPath.row == 5) {
         TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
         navigationController.viewControllers = @[timerViewController];
-    }else {
+    }else if (indexPath.section == 0 && indexPath.row == 1) {
         PageController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageController"];
         navigationController.viewControllers = @[pageViewController];
+    } else {
+        RatingViewController *ratingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ratingController"];
+        navigationController.viewControllers = @[ratingViewController];
     }
     
     self.frostedViewController.contentViewController = navigationController;
