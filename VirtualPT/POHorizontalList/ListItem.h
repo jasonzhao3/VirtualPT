@@ -18,6 +18,7 @@
 
 @property (nonatomic, retain) NSString *imageTitle;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIButton *imageButton;
 
 - (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle;
 

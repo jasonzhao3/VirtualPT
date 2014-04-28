@@ -86,4 +86,7 @@
     }
 
 }
+- (IBAction)cancelProfile:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

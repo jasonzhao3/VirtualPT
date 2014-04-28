@@ -16,9 +16,11 @@
     
     if (self) {
         //TODO: change item list to button list
-        
-//        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 72.0, 72.0)];
-//        [button setBackgroundImage:image forState:UIControlStateNormal];
+//        
+//        self.imageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 72.0, 72.0)];
+//        [self.imageButton setBackgroundImage:image forState:UIControlStateNormal];
+//        self.imageButton.frame = CGRectMake(0.0, 0.0, 72.0, 72.0);
+
         
         [self setUserInteractionEnabled:YES];
         
@@ -44,6 +46,7 @@
         
         [title setFrame:textRect];
         [imageView setFrame:imageRect];
+//        [imageView setFrame:self.imageButton.frame];
         
         [self addSubview:title];
         [self addSubview:imageView];

@@ -7,7 +7,7 @@
 //
 
 #import "GoalController.h"
-#import "PageController.h"
+#import "MotivationViewController.h"
 
 @interface GoalController ()
 
@@ -35,32 +35,32 @@
 - (void)createOptionList
 {
     
+    // Daily Activities
     ListItem *item1 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Daily Routine.png"] text:@"Daily Routine"];
-    ListItem *item2 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Do Exercise.png"] text:@"Exercise"];
-    ListItem *item3 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Do Yoga.png"] text:@"Yoga"];
-    ListItem *item4 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Drive Car.png"] text:@"Drive Car"];
-    ListItem *item5 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Garden.png"] text:@"Garden"];
+    ListItem *item2 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Work.png"] text:@"Work"];
+    ListItem *item3 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk.png"] text:@"Walk"];
+    ListItem *item4 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Bike.png"] text:@"Bike"];
+    ListItem *item5 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Drive.png"] text:@"Drive"];
+    ListItem *item6 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Play with kids.png"] text:@"Play with kids"];
+    ListItem *item7 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Rise from bed.png"] text:@"Rise from bed"];
+    ListItem *item8 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Rise from wheelchair.png"] text:@"Rise from wheelchair"];
+    ListItem *item9 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk Stairs.png"] text:@"Walk Stairs"];
+  
 
-    ListItem *item6 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Go Fishing.png"] text:@"Go Fishing"];
-    ListItem *item7 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Go out with friends.png"] text:@"Hang Out"];
-    ListItem *item8 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Jump Rope.png"] text:@"Jump Rope"];
-    ListItem *item9 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Play Basketball.png"] text:@"Play Basketball"];
-    ListItem *item10= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Play Golf.png"] text:@"Play Golf"];
-    
-    ListItem *item11= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Play Tennis.png"] text:@"Play Tennis"];
-    ListItem *item12= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Play with kids.png"] text:@"Play with kids"];
-    ListItem *item13= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Return to Work.png"] text:@"Return to Work"];
-    ListItem *item14= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Ride Bike.png"] text:@"Ride Bike"];
-    
-    ListItem *item15= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Rise from bed without assistance.png"] text:@"Rise from bed without assistance"];
-    ListItem *item16= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Rise from wheelchair.png"] text:@"Rise from wheelchair"];
-    ListItem *item17= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Run.png"] text:@"Run"];
-    ListItem *item18= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Swim.png"] text:@"Swim"];
+    // For Fun
+    ListItem *item10 = [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Basketball.png"] text:@"Basketball"];
+    ListItem *item11= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Golf.png"] text:@"Golf"];
+    ListItem *item12= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Tennis.png"] text:@"Tennis"];
+    ListItem *item13= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Fish.png"] text:@"Fishing"];
+    ListItem *item14= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Garden.png"] text:@"Garden"];
+    ListItem *item15= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Go Out.png"] text:@"Go Out"];
+    ListItem *item16= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Run.png"] text:@"Run"];
+    ListItem *item17= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Swim.png"] text:@"Swim"];
+    ListItem *item18= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Yoga.png"] text:@"Yoga"];
     ListItem *item19= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk Dog.png"] text:@"Walk Dog"];
-    ListItem *item20= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk Stairs.png"] text:@"Walk Stairs"];
-    
-    ListItem *item21= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk without assistance.png"] text:@"Walk without assistance"];
-    ListItem *item22= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Other.png"] text:@"Other"];
+    ListItem *item20= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Exercise.png"] text:@"Exercise"];
+    ListItem *item21= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Jump Rope.png"] text:@"Jump Rope"];
+      ListItem *item22= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Other.png"] text:@"Other"];
   
     // last nil works as a sentinel for the mutable array
     optionList1 = [[NSMutableArray alloc] initWithObjects: item1, item2, item3, item4, item5, item6, item7, item8, item9,  nil];
@@ -95,19 +95,16 @@
     POHorizontalList *list;
     
     if ([indexPath row] == 0) {
-        title = @"Functionality";
+        title = @"Daily Acitivities";
         
         list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 155.0) title:title items:optionList1];
     }
     else if ([indexPath row] == 1) {
-        title = @"Leisure";
+        title = @"Fun";
         
         list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 155.0) title:title items:optionList2];
     }
 
-    
-    
-    
 //    NSString *title = @"";
 //    POHorizontalList *list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 200.0) title:title items:optionList];
     
@@ -136,11 +133,4 @@
 }
 */
 
-- (IBAction)doneButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    // The following is the disappear function for push segue
-//    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0]  animated:YES];
-//    [self.navigationController popViewControllerAnimated:YES];
-}
 @end

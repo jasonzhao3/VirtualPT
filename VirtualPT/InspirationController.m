@@ -47,5 +47,10 @@
 */
 
 - (IBAction)faithButton:(id)sender {
+    
+}
+
+- (IBAction)saveButton:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

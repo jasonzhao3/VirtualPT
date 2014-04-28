@@ -10,5 +10,5 @@
 
 @interface InspirationController : UIViewController
 - (IBAction)faithButton:(id)sender;
-
+- (IBAction)saveButton:(id)sender;
 @end

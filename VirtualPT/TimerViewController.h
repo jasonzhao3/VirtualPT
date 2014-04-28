@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioToolbox/AudioServices.h"
-#import "PageController.h"
+#import "MotivationViewController.h"
 
-@interface TimerViewController : PageController
+@interface TimerViewController : MotivationViewController
 @property (weak, nonatomic) IBOutlet UIDatePicker *timerPicker;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 

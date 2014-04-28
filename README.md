@@ -12,7 +12,8 @@ Done:
 
 TODO:
 1. store motivation into core data
-2.
+2. Chagne goal to select from a image panel pool?? with a little "Add" sign?
+3.
 
 1. what 
 2. interact with their electronic form -- dont' need double-documentation

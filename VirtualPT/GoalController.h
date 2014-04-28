@@ -15,7 +15,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)doneButton:(id)sender;
 
 
 @end

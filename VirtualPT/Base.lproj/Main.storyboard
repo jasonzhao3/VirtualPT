@@ -158,7 +158,6 @@
                         <segue destination="6t3-YZ-las" kind="push" id="mVJ-5r-Ews"/>
                         <segue destination="8Vf-WU-o6I" kind="push" identifier="exerciseSegue" id="eUV-NZ-BhZ"/>
                         <segue destination="ULX-E3-DJo" kind="push" id="jC0-MY-tPu"/>
-                        <segue destination="mzt-vA-vY8" kind="push" id="YyT-cF-Vlk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9R-KM-upb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,9 +413,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="gRe-yi-G1g">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tH1-9j-cbC">
+                            <connections>
+                                <action selector="cancelProfile:" destination="xrn-lf-pWN" id="04W-Vc-DFN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ucK-c2-qfW">
                             <connections>
-                                <segue destination="nd9-Ir-7rb" kind="push" id="tk9-QR-qxz"/>
+                                <segue destination="LYt-zP-Kuq" kind="push" id="lnA-Rc-GdS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -535,16 +539,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Motivation" id="iw3-eD-CnE">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="lRj-Jd-TBK">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="lRj-Jd-TBK">
                             <connections>
-                                <segue destination="WHG-4V-54l" kind="push" id="ZdR-u6-C4A"/>
+                                <action selector="saveButton:" destination="nd9-Ir-7rb" id="IeG-SY-aRZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsj-OZ-RMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637" y="-532"/>
+            <point key="canvasLocation" x="3017" y="-532"/>
         </scene>
         <!--Menu Table View Controller - Menu-->
         <scene sceneID="ZWo-gz-VM9">
@@ -836,10 +840,10 @@
             </objects>
             <point key="canvasLocation" x="1346" y="445"/>
         </scene>
-        <!--Page Controller - My Motivation-->
+        <!--Motivation View Controller - My Motivation-->
         <scene sceneID="MZT-7l-nLT">
             <objects>
-                <viewController restorationIdentifier="pageController" storyboardIdentifier="pageController" id="RKF-KK-JGV" customClass="PageController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="motivationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RKF-KK-JGV" customClass="MotivationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HC8-HA-7gM"/>
                         <viewControllerLayoutGuide type="bottom" id="139-tJ-dZj"/>
@@ -899,46 +903,108 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-oU-3QU">
-                                <rect key="frame" x="21" y="157" width="41" height="42"/>
+                                <rect key="frame" x="17" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="1 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-da-nea">
-                                <rect key="frame" x="70" y="157" width="41" height="42"/>
+                                <rect key="frame" x="66" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="2 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0av-3N-REn">
-                                <rect key="frame" x="119" y="157" width="41" height="42"/>
+                                <rect key="frame" x="115" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="3 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3Y-jH-E8T">
-                                <rect key="frame" x="168" y="157" width="41" height="42"/>
+                                <rect key="frame" x="164" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="4 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5U-xr-dD5">
-                                <rect key="frame" x="217" y="157" width="41" height="42"/>
+                                <rect key="frame" x="213" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="5 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDH-GP-zpi">
-                                <rect key="frame" x="259" y="157" width="41" height="42"/>
+                                <rect key="frame" x="262" y="76" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="6 Face">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What could we do to make this easier for you to do?" translatesAutoresizingMaskIntoConstraints="NO" id="oST-oo-Nt8">
+                                <rect key="frame" x="55" y="142" width="211" height="127"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLH-VV-RG8">
+                                <rect key="frame" x="66" y="219" width="70" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Decrease physical effort">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="bfT-Eh-g1u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8v-GA-QJO">
+                                <rect key="frame" x="170" y="219" width="104" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Incorporate into daily routine">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="gPV-zq-YLM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-M6-9B1">
+                                <rect key="frame" x="66" y="335" width="70" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="More Time">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="o2a-3x-Tjw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R4-1J-Fxh">
+                                <rect key="frame" x="194" y="333" width="80" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="More fun">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="FTg-Rv-HiM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-b4-rNK">
+                                <rect key="frame" x="66" y="433" width="95" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Other">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="14a-6T-Bxf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -947,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTF-bk-qtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="1784"/>
+            <point key="canvasLocation" x="2275" y="244"/>
         </scene>
         <!--Timer View Controller - Timer-->
         <scene sceneID="0QB-hC-iHK">
@@ -1039,7 +1105,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2C-OM-apy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="2462"/>
+            <point key="canvasLocation" x="850" y="1826"/>
         </scene>
         <!--Users Table View Controller-->
         <scene sceneID="SmD-zW-vAp">
@@ -1088,95 +1154,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1346" y="-1600"/>
         </scene>
-        <!--View Controller - Motivation-->
-        <scene sceneID="I8X-ue-dvr">
-            <objects>
-                <viewController id="WHG-4V-54l" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ygn-se-vDH"/>
-                        <viewControllerLayoutGuide type="bottom" id="32Q-lY-qSb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Hx4-WC-9YJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What could we do to make this easier for you to do?" translatesAutoresizingMaskIntoConstraints="NO" id="oST-oo-Nt8">
-                                <rect key="frame" x="55" y="32" width="211" height="127"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLH-VV-RG8">
-                                <rect key="frame" x="64" y="197" width="70" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Decrease physical effort">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="bfT-Eh-g1u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8v-GA-QJO">
-                                <rect key="frame" x="152" y="191" width="104" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Incorporate into daily routine">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="gPV-zq-YLM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R4-1J-Fxh">
-                                <rect key="frame" x="176" y="311" width="80" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="More fun">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="FTg-Rv-HiM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-M6-9B1">
-                                <rect key="frame" x="64" y="311" width="70" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="More Time">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="o2a-3x-Tjw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-b4-rNK">
-                                <rect key="frame" x="64" y="402" width="95" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Other">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="faithButton:" destination="nd9-Ir-7rb" eventType="touchUpInside" id="14a-6T-Bxf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Motivation" id="mUu-7d-G5b">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="i1E-lB-vcL">
-                            <connections>
-                                <segue destination="LYt-zP-Kuq" kind="push" id="voK-dd-Dc3"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2rE-Fo-Dic" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3004" y="-532"/>
-        </scene>
         <!--Goal Controller - Motivation-->
         <scene sceneID="NKy-Av-PeO">
             <objects>
@@ -1216,9 +1193,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Motivation" id="YNt-MM-HSd">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="k1m-SY-KVo">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="k1m-SY-KVo">
                             <connections>
-                                <action selector="doneButton:" destination="LYt-zP-Kuq" id="bUb-Pr-Yw7"/>
+                                <segue destination="nd9-Ir-7rb" kind="push" id="ZkW-SD-2YS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1228,11 +1205,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRC-pR-96a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-532"/>
+            <point key="canvasLocation" x="2633" y="-532"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0iq-bY-Ujc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDM-Qd-XcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aTH-1i-Emx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6RD-o7-AZX"/>
@@ -1245,9 +1223,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="xrn-lf-pWN" kind="relationship" relationship="rootViewController" id="D1T-Mu-AP6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wDM-Qd-XcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1885" y="-532"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gE3-fL-AeJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGM-3h-ILf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hKS-tX-o6r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mzt-vA-vY8" kind="relationship" relationship="rootViewController" id="OC1-tv-RRo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYx-zI-prx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885" y="244"/>
         </scene>
     </scenes>
     <resources>

@@ -51,7 +51,7 @@
 		6B77BDEE18EBF1A0009B71ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B77BDEC18EBF1A0009B71ED /* InfoPlist.strings */; };
 		6B77BDF018EBF1A0009B71ED /* VirtualPTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77BDEF18EBF1A0009B71ED /* VirtualPTTests.m */; };
 		6B77BDFC18EBFFC8009B71ED /* VPTMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */; };
-		6B91A89818EE33EC00F36EF1 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A89718EE33EC00F36EF1 /* PageController.m */; };
+		6B91A89818EE33EC00F36EF1 /* MotivationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A89718EE33EC00F36EF1 /* MotivationViewController.m */; };
 		6B91A8C518EE4B6C00F36EF1 /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8A018EE4B6C00F36EF1 /* FUIAlertView.m */; };
 		6B91A8C618EE4B6C00F36EF1 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8A218EE4B6C00F36EF1 /* FUIButton.m */; };
 		6B91A8C718EE4B6C00F36EF1 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8A418EE4B6C00F36EF1 /* FUICellBackgroundView.m */; };
@@ -173,8 +173,8 @@
 		6B77BDEF18EBF1A0009B71ED /* VirtualPTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualPTTests.m; sourceTree = "<group>"; };
 		6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPTMenuTableViewController.h; sourceTree = "<group>"; };
 		6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPTMenuTableViewController.m; sourceTree = "<group>"; };
-		6B91A89618EE33EC00F36EF1 /* PageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageController.h; sourceTree = "<group>"; };
-		6B91A89718EE33EC00F36EF1 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
+		6B91A89618EE33EC00F36EF1 /* MotivationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotivationViewController.h; sourceTree = "<group>"; };
+		6B91A89718EE33EC00F36EF1 /* MotivationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotivationViewController.m; sourceTree = "<group>"; };
 		6B91A89E18EE4B6C00F36EF1 /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUIKit.h; sourceTree = "<group>"; };
 		6B91A89F18EE4B6C00F36EF1 /* FUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIAlertView.h; sourceTree = "<group>"; };
 		6B91A8A018EE4B6C00F36EF1 /* FUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIAlertView.m; sourceTree = "<group>"; };
@@ -476,8 +476,8 @@
 				6B5BD9E818FA4C6700B22E01 /* FlowControl */,
 				6B5BD9FD18FB58DF00B22E01 /* Progress */,
 				6B5BD9EC18FA4EAD00B22E01 /* Exercise */,
-				6B91A89618EE33EC00F36EF1 /* PageController.h */,
-				6B91A89718EE33EC00F36EF1 /* PageController.m */,
+				6B91A89618EE33EC00F36EF1 /* MotivationViewController.h */,
+				6B91A89718EE33EC00F36EF1 /* MotivationViewController.m */,
 				6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */,
 				6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */,
 				6B5BD9E518F9F43800B22E01 /* TimerViewController.h */,
@@ -737,7 +737,7 @@
 				6B91A8CD18EE4B6C00F36EF1 /* UIColor+FlatUI.m in Sources */,
 				6B91A8EE18EE5A6500F36EF1 /* UIImage+REFrostedViewController.m in Sources */,
 				6B5BDA4C18FB97AC00B22E01 /* PNLineChartDataItem.m in Sources */,
-				6B91A89818EE33EC00F36EF1 /* PageController.m in Sources */,
+				6B91A89818EE33EC00F36EF1 /* MotivationViewController.m in Sources */,
 				6B91A8ED18EE5A6500F36EF1 /* REFrostedViewController.m in Sources */,
 				6B91A8EB18EE5A6500F36EF1 /* RECommonFunctions.m in Sources */,
 				6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */,

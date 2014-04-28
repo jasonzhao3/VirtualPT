@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InjuryController : UIViewController
+- (IBAction)cancelProfile:(id)sender;
 
 @end

@@ -15,7 +15,7 @@
  */
 
 #import "VPTMenuTableViewController.h"
-#import "PageController.h"
+#import "MotivationViewController.h"
 #import "VPTHomeViewController.h"
 #import "VPTNavigationController.h"
 #import "TimerViewController.h"
@@ -68,7 +68,7 @@
     });
 
 
-    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"Exercises Library", @"Progress Tracker", @"Daily Task", @"Timer", nil];
+    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"Exercises Library", @"My Exercises", @"Progress Tracker", @"Timer", nil];
 }
 
 #pragma mark - Table view data source
@@ -148,21 +148,21 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         VPTHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        MotivationViewController *motivationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"motivationViewController"];
+        navigationController.viewControllers = @[motivationViewController];
     } else if (indexPath.section == 0 && indexPath.row == 2){
         ExerciseTableViewController *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"exerciseController"];
         navigationController.viewControllers = @[exerciseController];
     } else if (indexPath.section == 0 && indexPath.row == 3) {
-        ProgressTableViewController *progressController = [self.storyboard instantiateViewControllerWithIdentifier:@"progressController"];
-        navigationController.viewControllers = @[progressController];
-    }else if (indexPath.section == 0 && indexPath.row == 5) {
-        TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
-        navigationController.viewControllers = @[timerViewController];
-    }else if (indexPath.section == 0 && indexPath.row == 1) {
-        PageController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageController"];
-        navigationController.viewControllers = @[pageViewController];
-    } else {
         RatingViewController *ratingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ratingController"];
         navigationController.viewControllers = @[ratingViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 4){
+        ProgressTableViewController *progressController = [self.storyboard instantiateViewControllerWithIdentifier:@"progressController"];
+        navigationController.viewControllers = @[progressController];
+    } else if (indexPath.section == 0 && indexPath.row == 5) {
+        TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
+        navigationController.viewControllers = @[timerViewController];
     }
     
     self.frostedViewController.contentViewController = navigationController;
