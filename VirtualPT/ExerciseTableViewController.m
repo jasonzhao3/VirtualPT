@@ -37,11 +37,14 @@
 #import "CHCSVParser.h"
 #import "VPTAppDelegate.h"
 #import "Exercise.h"
+#import "SimpleTableCell.h"
 
-
+#define CELL_HEIGHT 72
+#define IMAGE_HEIGHT 66
 @interface ExerciseTableViewController ()
 @property (strong) NSArray *array;
 //@property (nonatomic,strong)NSArray* fetchedExercisesArray;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *exerciseLabel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
 
@@ -61,6 +64,10 @@
     [super viewDidLoad];
     VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
+
+    // custom table cell
+    static NSString *CellIdentifier = @"exerciseCell";
+    [self.tableView registerNib:[UINib nibWithNibName:@"SimpleTableCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
     
     
 //    self.exerciseList = [NSArray arrayWithObjects:@"Knee Flextion", @"Double Knee To Chest Stretch", @"Short Arc Quad", @"Quad Set", @"Hamstring Set", nil];
@@ -86,7 +93,7 @@
     NSString *file = [[NSBundle bundleForClass:[self class]] pathForResource:@"hep2go" ofType:@"csv"];
 	
 	NSArray *contents = [NSArray arrayWithContentsOfCSVFile:file options:CHCSVParserOptionsRecognizesBackslashesAsEscapes];
-    NSLog (@"read %@", contents);
+//    NSLog (@"read %@", contents);
 //
     [contents enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
         // do something with object
@@ -100,8 +107,8 @@
             newExercise.hold = [NSNumber numberWithInt:[[object objectAtIndex:2]integerValue]];
             newExercise.reps = [NSNumber numberWithInt:[[object objectAtIndex:3] integerValue]];
             newExercise.duration = [NSNumber numberWithInt:[[object objectAtIndex:4] integerValue]];
-            newExercise.imgURL = [object objectAtIndex:4];
-            newExercise.videoURL = [object objectAtIndex:5];
+            newExercise.imgURL = [object objectAtIndex:5];
+            newExercise.videoURL = [object objectAtIndex:6];
             
             //  save to database
             NSError *error;
@@ -132,41 +139,49 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"exerciseCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
+         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
         NSLog (@"nil cell");
     }
     
     // Configure the cell...
-//    NSLog (@"The cell content is %@", [self.exerciseList objectAtIndex:indexPath.row]);
     Exercise * exercise = [self.exerciseList objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",[exercise.name lowercaseString]];
+
+    // make image size as a thumbnail
+    cell.thumbnailImageView.frame = CGRectMake(12, 3, IMAGE_HEIGHT, IMAGE_HEIGHT);
+    cell.thumbnailImageView.image = [UIImage imageNamed:exercise.imgURL];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@",[exercise.name lowercaseString]];
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return CELL_HEIGHT;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+
+//// Override to support conditional editing of the table view.
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Return NO if you do not want the specified item to be editable.
+//    return YES;
+//}
+
+
+
+//// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
+//}
+
 
 /*
 // Override to support rearranging the table view.
