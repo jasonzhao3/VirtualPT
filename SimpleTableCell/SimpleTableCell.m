@@ -13,9 +13,17 @@
 //@synthesize prepTimeLabel = _prepTimeLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.isSelected = NO;
+    // Do something
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+//    NSLog (@"come here");
     if (self) {
         // Initialization code
     }

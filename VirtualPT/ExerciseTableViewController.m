@@ -30,7 +30,6 @@
  
  */
 
-
 #import "ExerciseTableViewController.h"
 #import "LoginViewController.h"
 #import "VideoPlayerViewController.h"
@@ -40,24 +39,24 @@
 #import "SimpleTableCell.h"
 
 #define CELL_HEIGHT 72
-#define IMAGE_HEIGHT 66
+#define THUMBNAIL_SIZE 66
+#define CHECK_SIZE 18
 @interface ExerciseTableViewController ()
 @property (strong) NSArray *array;
 //@property (nonatomic,strong)NSArray* fetchedExercisesArray;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *exerciseLabel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
 
 @implementation ExerciseTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:UITableViewCellStyleValue1];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
@@ -67,8 +66,8 @@
 
     // custom table cell
     static NSString *CellIdentifier = @"exerciseCell";
-    [self.tableView registerNib:[UINib nibWithNibName:@"SimpleTableCell" bundle:nil] forCellReuseIdentifier:CellIdentifier];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SimpleTableCell"  bundle:nil]  forCellReuseIdentifier:CellIdentifier];
+//    [self.tableView registerClass:@"SimpleTableCell" forCellReuseIdentifier:CellIdentifier];
     
 //    self.exerciseList = [NSArray arrayWithObjects:@"Knee Flextion", @"Double Knee To Chest Stretch", @"Short Arc Quad", @"Quad Set", @"Hamstring Set", nil];
 //    [self loadCSVData];
@@ -141,16 +140,17 @@
     static NSString *CellIdentifier = @"exerciseCell";
     SimpleTableCell *cell = (SimpleTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        NSLog (@"nil cell");
+//         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+//        NSLog (@"nil cell");
+         cell = [[SimpleTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     Exercise * exercise = [self.exerciseList objectAtIndex:indexPath.row];
 
     // make image size as a thumbnail
-    cell.thumbnailImageView.frame = CGRectMake(12, 3, IMAGE_HEIGHT, IMAGE_HEIGHT);
+    cell.thumbnailImageView.frame = CGRectMake(12, 3, THUMBNAIL_SIZE, THUMBNAIL_SIZE);
     cell.thumbnailImageView.image = [UIImage imageNamed:exercise.imgURL];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@",[exercise.name lowercaseString]];
     return cell;
@@ -159,6 +159,38 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return CELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    NSLog(@"didSelectRowAtIndexPath");
+    /*UIAlertView *messageAlert = [[UIAlertView alloc]
+     initWithTitle:@"Row Selected" message:@"You've selected a row" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];*/
+//    UIAlertView *messageAlert = [[UIAlertView alloc]
+//                                 initWithTitle:@"Row Selected" message:[tableData objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    
+//    // Display the Hello World Message
+//    [messageAlert show];
+    
+    // Checked the selected row
+    SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (cell.isSelected == NO) {
+        cell.checkImageView.frame = CGRectMake(60, 51, CHECK_SIZE, CHECK_SIZE);
+        cell.checkImageView.image = [UIImage imageNamed:@"check"];
+        cell.isSelected = YES;
+    } else {
+        cell.checkImageView.image = nil;
+        cell.isSelected = NO;
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    [self performSegueWithIdentifier:@"showExerciseSegue" sender:self];
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"showExerciseSegue" sender:self];
+    NSLog(@"tapped button at row: %@",cell.nameLabel.text);
 }
 
 
@@ -210,29 +242,30 @@
 //}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    self.title = @"Back";
-    
-//    if ([sender isKindOfClass:[UITableViewCell class]]) {
-//        // find out which row in which section we're seguing from
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        if (indexPath) {
-//            // found it ... are we doing the Display Photo segue?
-//            if ([segue.identifier isEqualToString:@"showExerciseSegue"]) {
-//                // yes ... is the destination an ImageViewController?
-//                if ([segue.destinationViewController isKindOfClass:[VideoPlayerViewController class]]) {
-//                    // yes ... then we know how to prepare for that segue!
-//                    [self prepareVideoViewController:segue.destinationViewController
-//                                      toDisplayPhoto:self.photos[indexPath.row]];
-//                }
-//            }
-//        }
-//    }
-
-    
-}
-
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    self.title = @"Back";
+//    NSLog(@"come to prepare for segue");
+//
+////    if ([sender isKindOfClass:[UITableViewCell class]]) {
+////        // find out which row in which section we're seguing from
+////        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+////        if (indexPath) {
+////            // found it ... are we doing the Display Photo segue?
+////            if ([segue.identifier isEqualToString:@"showExerciseSegue"]) {
+////                // yes ... is the destination an ImageViewController?
+////                if ([segue.destinationViewController isKindOfClass:[VideoPlayerViewController class]]) {
+////                    // yes ... then we know how to prepare for that segue!
+////                    [self prepareVideoViewController:segue.destinationViewController
+////                                      toDisplayPhoto:self.photos[indexPath.row]];
+////                }
+////            }
+////        }
+////    }
+//
+//    
+//}
+//
 
 - (IBAction)showMenu:(id)sender {
     [self.view endEditing:YES];
