@@ -34,10 +34,15 @@
 #import "ExerciseTableViewController.h"
 #import "LoginViewController.h"
 #import "VideoPlayerViewController.h"
+#import "CHCSVParser.h"
+#import "VPTAppDelegate.h"
+#import "Exercise.h"
 
 
 @interface ExerciseTableViewController ()
-
+@property (strong) NSArray *array;
+//@property (nonatomic,strong)NSArray* fetchedExercisesArray;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
 
 @implementation ExerciseTableViewController
@@ -54,8 +59,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
     
-    self.exerciseList = [NSArray arrayWithObjects:@"Knee Flextion", @"Double Knee To Chest Stretch", @"Short Arc Quad", @"Quad Set", @"Hamstring Set", nil];
+    
+//    self.exerciseList = [NSArray arrayWithObjects:@"Knee Flextion", @"Double Knee To Chest Stretch", @"Short Arc Quad", @"Quad Set", @"Hamstring Set", nil];
+//    [self loadCSVData];
+    self.exerciseList = [appDelegate getExerciseList];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +74,47 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma - initialize database with CSV
+
+- (void)loadCSVData
+{
+    // Add Entry to PhoneBook Data base and reset all fields
+    
+    //TODO: validate existed account
+    
+    NSString *file = [[NSBundle bundleForClass:[self class]] pathForResource:@"hep2go" ofType:@"csv"];
+	
+	NSArray *contents = [NSArray arrayWithContentsOfCSVFile:file options:CHCSVParserOptionsRecognizesBackslashesAsEscapes];
+    NSLog (@"read %@", contents);
+//
+    [contents enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
+        // do something with object
+        if (idx > 0) { // get rid of csv header
+            Exercise * newExercise = [NSEntityDescription insertNewObjectForEntityForName:@"Exercise"
+                                                                   inManagedObjectContext:self.managedObjectContext];
+            // set up field
+            newExercise.name = [object objectAtIndex:0];
+            newExercise.instruction = [object objectAtIndex:1];
+        
+            newExercise.hold = [NSNumber numberWithInt:[[object objectAtIndex:2]integerValue]];
+            newExercise.reps = [NSNumber numberWithInt:[[object objectAtIndex:3] integerValue]];
+            newExercise.duration = [NSNumber numberWithInt:[[object objectAtIndex:4] integerValue]];
+            newExercise.imgURL = [object objectAtIndex:4];
+            newExercise.videoURL = [object objectAtIndex:5];
+            
+            //  save to database
+            NSError *error;
+            if (![self.managedObjectContext save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            } else {
+                NSLog(@"save successfully: %@!", newExercise);
+            }
+      }
+    }];
+
+}
+
 
 #pragma mark - Table view data source
 
@@ -86,7 +138,10 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [self.exerciseList objectAtIndex:indexPath.row];
+//    NSLog (@"The cell content is %@", [self.exerciseList objectAtIndex:indexPath.row]);
+    Exercise * exercise = [self.exerciseList objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[exercise.name lowercaseString]];
     return cell;
 }
 

@@ -11,6 +11,10 @@
 		6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */; };
 		6B089FE718F1CB2B00AEBB12 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE618F1CB2B00AEBB12 /* Motivation.m */; };
 		6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE918F1CB2C00AEBB12 /* User.m */; };
+		6B2A59CD1910992600620E46 /* USPresident Wikipedia.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A59CC1910992600620E46 /* USPresident Wikipedia.csv */; };
+		6B2A59D119109AD000620E46 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A59D019109AD000620E46 /* CHCSVParser.m */; };
+		6B2A59D31910B10800620E46 /* hep2go.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A59D21910B10800620E46 /* hep2go.csv */; };
+		6B2A59D91910B95E00620E46 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A59D81910B95E00620E46 /* Exercise.m */; };
 		6B54B045190C21DF0093FEF1 /* KneeFlextion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B043190C21DF0093FEF1 /* KneeFlextion.mp4 */; };
 		6B54B046190C21DF0093FEF1 /* SAQ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B044190C21DF0093FEF1 /* SAQ.mp4 */; };
 		6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B048190C2B340093FEF1 /* InspirationController.m */; };
@@ -20,6 +24,7 @@
 		6B54B057190D6DB80093FEF1 /* POHorizontalList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B054190D6DB80093FEF1 /* POHorizontalList.m */; };
 		6B54B05A190DAA2C0093FEF1 /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B059190DAA2C0093FEF1 /* RatingViewController.m */; };
 		6B54B05D190DD4080093FEF1 /* InjuryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B05C190DD4080093FEF1 /* InjuryController.m */; };
+		6B54B05F190E2F6E0093FEF1 /* hep2go_doc in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B05E190E2F6E0093FEF1 /* hep2go_doc */; };
 		6B56200218F8A1760018FDE9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56200118F8A1760018FDE9 /* CoreData.framework */; };
 		6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */; };
 		6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9E618F9F43800B22E01 /* TimerViewController.m */; };
@@ -42,7 +47,6 @@
 		6B77BDCF18EBF1A0009B71ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B77BDCD18EBF1A0009B71ED /* InfoPlist.strings */; };
 		6B77BDD118EBF1A0009B71ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77BDD018EBF1A0009B71ED /* main.m */; };
 		6B77BDD518EBF1A0009B71ED /* VPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77BDD418EBF1A0009B71ED /* VPTAppDelegate.m */; };
-		6B77BDD818EBF1A0009B71ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B77BDD618EBF1A0009B71ED /* Main.storyboard */; };
 		6B77BDDB18EBF1A0009B71ED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77BDDA18EBF1A0009B71ED /* LoginViewController.m */; };
 		6B77BDDD18EBF1A0009B71ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B77BDDC18EBF1A0009B71ED /* Images.xcassets */; };
 		6B77BDE418EBF1A0009B71ED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B77BDE318EBF1A0009B71ED /* XCTest.framework */; };
@@ -103,6 +107,12 @@
 		6B089FE618F1CB2B00AEBB12 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
 		6B089FE818F1CB2B00AEBB12 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6B089FE918F1CB2C00AEBB12 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6B2A59CC1910992600620E46 /* USPresident Wikipedia.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = "USPresident Wikipedia.csv"; path = "VirtualPT/Files/USPresident Wikipedia.csv"; sourceTree = "<group>"; };
+		6B2A59CF19109AD000620E46 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		6B2A59D019109AD000620E46 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		6B2A59D21910B10800620E46 /* hep2go.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = hep2go.csv; path = VirtualPT/Files/hep2go.csv; sourceTree = "<group>"; };
+		6B2A59D71910B95E00620E46 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		6B2A59D81910B95E00620E46 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		6B54B043190C21DF0093FEF1 /* KneeFlextion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = KneeFlextion.mp4; path = video/KneeFlextion.mp4; sourceTree = "<group>"; };
 		6B54B044190C21DF0093FEF1 /* SAQ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SAQ.mp4; path = video/SAQ.mp4; sourceTree = "<group>"; };
 		6B54B047190C2B340093FEF1 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
@@ -119,6 +129,7 @@
 		6B54B059190DAA2C0093FEF1 /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		6B54B05B190DD4080093FEF1 /* InjuryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InjuryController.h; sourceTree = "<group>"; };
 		6B54B05C190DD4080093FEF1 /* InjuryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InjuryController.m; sourceTree = "<group>"; };
+		6B54B05E190E2F6E0093FEF1 /* hep2go_doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hep2go_doc; sourceTree = "<group>"; };
 		6B56200118F8A1760018FDE9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
 		6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
@@ -267,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				6B089FCB18F1B67600AEBB12 /* Users.xcdatamodeld */,
+				6B2A59D71910B95E00620E46 /* Exercise.h */,
+				6B2A59D81910B95E00620E46 /* Exercise.m */,
 				6B089FE218F1CB2B00AEBB12 /* DailyCheckin.h */,
 				6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */,
 				6B089FE518F1CB2B00AEBB12 /* Motivation.h */,
@@ -283,6 +296,15 @@
 				6B77BDD618EBF1A0009B71ED /* Main.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		6B2A59CE19109AD000620E46 /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				6B2A59CF19109AD000620E46 /* CHCSVParser.h */,
+				6B2A59D019109AD000620E46 /* CHCSVParser.m */,
+			);
+			path = CHCSVParser;
 			sourceTree = "<group>";
 		};
 		6B54B04A190C2B390093FEF1 /* Motivation */ = {
@@ -388,7 +410,10 @@
 		6B77BDB818EBF1A0009B71ED = {
 			isa = PBXGroup;
 			children = (
+				6B2A59D21910B10800620E46 /* hep2go.csv */,
+				6B2A59CC1910992600620E46 /* USPresident Wikipedia.csv */,
 				6B54B04B190C49810093FEF1 /* README.md */,
+				6B54B05E190E2F6E0093FEF1 /* hep2go_doc */,
 				6B77BDCA18EBF1A0009B71ED /* VirtualPT */,
 				6B5BD9F218FB08D700B22E01 /* video */,
 				6B77BDE918EBF1A0009B71ED /* VirtualPTTests */,
@@ -437,6 +462,7 @@
 		6B77BDCB18EBF1A0009B71ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B2A59CE19109AD000620E46 /* CHCSVParser */,
 				6B54B050190D6DB80093FEF1 /* POHorizontalList */,
 				6B5BDA3218FB97AC00B22E01 /* PNChart */,
 				6B91A8DE18EE5A6500F36EF1 /* REFrostedViewController */,
@@ -640,11 +666,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2A59D31910B10800620E46 /* hep2go.csv in Resources */,
+				6B2A59CD1910992600620E46 /* USPresident Wikipedia.csv in Resources */,
 				6B54B04C190C49810093FEF1 /* README.md in Resources */,
 				6B77BDDD18EBF1A0009B71ED /* Images.xcassets in Resources */,
+				6B54B05F190E2F6E0093FEF1 /* hep2go_doc in Resources */,
 				6B77BDCF18EBF1A0009B71ED /* InfoPlist.strings in Resources */,
 				6B54B046190C21DF0093FEF1 /* SAQ.mp4 in Resources */,
-				6B77BDD818EBF1A0009B71ED /* Main.storyboard in Resources */,
 				6B54B045190C21DF0093FEF1 /* KneeFlextion.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,7 +737,9 @@
 				6B5BDA4618FB97AC00B22E01 /* PNBarChart.m in Sources */,
 				6B5BDA4918FB97AC00B22E01 /* PNColor.m in Sources */,
 				6B77BDD118EBF1A0009B71ED /* main.m in Sources */,
+				6B2A59D91910B95E00620E46 /* Exercise.m in Sources */,
 				6B5BDA4718FB97AC00B22E01 /* PNChartLabel.m in Sources */,
+				6B2A59D119109AD000620E46 /* CHCSVParser.m in Sources */,
 				6B91A8D118EE4B6C00F36EF1 /* UIPopoverController+FlatUI.m in Sources */,
 				6B91A8C818EE4B6C00F36EF1 /* FUIPopoverBackgroundView.m in Sources */,
 				6B91A8D618EE4B6C00F36EF1 /* UITableViewCell+FlatUI.m in Sources */,

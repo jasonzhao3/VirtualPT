@@ -13,7 +13,8 @@ Done:
 TODO:
 1. store motivation into core data
 2. Chagne goal to select from a image panel pool?? with a little "Add" sign?
-3.
+3. store exercise in the core data
+4. enable search, add to my own exercise list -- but I think this is the job a therapist will do
 
 1. what 
 2. interact with their electronic form -- dont' need double-documentation
@@ -22,3 +23,10 @@ TODO:
 5. Fitstar 
 6. check excel -- daily
 7. icon for each task
+
+
+
+
+20140429
+Done:
+1. 

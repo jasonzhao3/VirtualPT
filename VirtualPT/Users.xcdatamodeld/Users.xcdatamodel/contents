@@ -6,9 +6,12 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="checkinOfUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userHasDailyCheckin" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Exercise" syncable="YES">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="hold" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imgURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="instruction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -32,8 +35,8 @@
     </entity>
     <elements>
         <element name="DailyCheckin" positionX="-227" positionY="-130" width="128" height="103"/>
+        <element name="Exercise" positionX="-513" positionY="72" width="128" height="148"/>
         <element name="Motivation" positionX="-225" positionY="45" width="128" height="148"/>
         <element name="User" positionX="-513" positionY="-108" width="128" height="148"/>
-        <element name="Exercise" positionX="-513" positionY="72" width="128" height="103"/>
     </elements>
 </model>
