@@ -158,6 +158,7 @@
                         <segue destination="6t3-YZ-las" kind="push" id="mVJ-5r-Ews"/>
                         <segue destination="8Vf-WU-o6I" kind="push" identifier="exerciseSegue" id="eUV-NZ-BhZ"/>
                         <segue destination="ULX-E3-DJo" kind="push" id="jC0-MY-tPu"/>
+                        <segue destination="Gfj-4f-1mY" kind="push" id="LQT-db-YTF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9R-KM-upb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -581,6 +582,38 @@
             </objects>
             <point key="canvasLocation" x="294" y="914"/>
         </scene>
+        <!--My ExerciseTVC - My Exercises-->
+        <scene sceneID="PHW-w5-OiV">
+            <objects>
+                <tableViewController storyboardIdentifier="myExerciseController" id="Gfj-4f-1mY" customClass="MyExerciseTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="b6k-WJ-0wJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doExerciseSegue" id="Jgb-Nk-LAd">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jgb-Nk-LAd" id="J2O-uQ-HJD">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cp3-ke-dCH" kind="modal" identifier="doExerciseSegue" id="X6Q-8B-4bE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gfj-4f-1mY" id="gii-3C-f6o"/>
+                            <outlet property="delegate" destination="Gfj-4f-1mY" id="ez6-YB-GeU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Exercises" id="yMg-Bg-llY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oig-Wu-u9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="1126"/>
+        </scene>
         <!--Exercise Table View Controller - Exercise List-->
         <scene sceneID="0fx-T9-Oql">
             <objects>
@@ -660,7 +693,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mtk-fw-xEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="1106"/>
+            <point key="canvasLocation" x="850" y="1806"/>
         </scene>
         <!--Chart View Controller - Daily Hours Plot-->
         <scene sceneID="dKc-6o-BKU">
@@ -688,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkG-Lb-YRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1346" y="1106"/>
+            <point key="canvasLocation" x="1351" y="1806"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z4n-yN-I68">
@@ -770,9 +803,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-0a-11p">
-                                <rect key="frame" x="132" y="406" width="54" height="30"/>
+                                <rect key="frame" x="123" y="411" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Demo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -880,6 +916,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wR-Mi-9zW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850" y="-239"/>
+        </scene>
+        <!--Do Exercise View Controller-->
+        <scene sceneID="umb-0Q-T63">
+            <objects>
+                <viewController storyboardIdentifier="doExerciseController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cp3-ke-dCH" customClass="DoExerciseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wl6-we-1JY"/>
+                        <viewControllerLayoutGuide type="bottom" id="YP3-Mt-NbD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CcC-g8-a04">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ql9-32-h2g">
+                                <rect key="frame" x="0.0" y="153" width="320" height="222"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTL-yx-3Iv">
+                                <rect key="frame" x="118" y="124" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SecTimer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkX-Oi-2cK">
+                                <rect key="frame" x="130" y="391" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-gt-WOm">
+                                <rect key="frame" x="0.0" y="530" width="115" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="PAUSE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseButton:" destination="cp3-ke-dCH" eventType="touchUpInside" id="Crc-EA-nx7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-0M-at1">
+                                <rect key="frame" x="118" y="530" width="101" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="EXIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButton:" destination="cp3-ke-dCH" eventType="touchUpInside" id="nEd-Qz-uZa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz9-qm-vis">
+                                <rect key="frame" x="222" y="530" width="98" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="HELP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpButton:" destination="cp3-ke-dCH" eventType="touchUpInside" id="1Tu-r3-Gx1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-zM-ip0">
+                                <rect key="frame" x="44" y="68" width="244" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="caJ-aq-Jqe">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="L9C-at-QVF">
+                            <connections>
+                                <segue destination="mzt-vA-vY8" kind="push" id="kDo-oh-FCl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="RZc-zM-ip0" id="jsX-QA-vpz"/>
+                        <outlet property="pauseButtonView" destination="1v8-gt-WOm" id="1tS-gX-aEi"/>
+                        <outlet property="sectionTimerLabel" destination="TkX-Oi-2cK" id="IrU-iK-3vp"/>
+                        <outlet property="totalTimeLabel" destination="UTL-yx-3Iv" id="gXX-qM-shk"/>
+                        <outlet property="visualView" destination="Ql9-32-h2g" id="Lmg-Wa-APo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xmP-gX-DE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="1126"/>
         </scene>
         <!--Rating View Controller - Rating-->
         <scene sceneID="NcW-Jv-bsM">
@@ -1004,7 +1132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTF-bk-qtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="322"/>
+            <point key="canvasLocation" x="2287" y="1120"/>
         </scene>
         <!--Timer View Controller - Timer-->
         <scene sceneID="0QB-hC-iHK">
@@ -1096,7 +1224,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2C-OM-apy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="1826"/>
+            <point key="canvasLocation" x="850" y="2488"/>
         </scene>
         <!--Users Table View Controller-->
         <scene sceneID="SmD-zW-vAp">

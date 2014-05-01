@@ -21,7 +21,6 @@
  Lying on your back with knees straight, slide the affected heel towards your buttock as you bend your knee. Use the unaffected leg to assist the bending.
  
  Hold a gentle stretch in this position and then return to original position.
- http://pdl.vimeocdn.com/00500/945/157799128.mp4?token2=1397365853_43a8e0cd6955389bbb4a66f7c39b5e4c&aksessionid=131b837b35e7b306
  
  -----
  SHORT ARC QUAD  - SAQ
@@ -44,7 +43,7 @@
 #define THUMBNAIL_SIZE 66
 #define CHECK_SIZE 18
 @interface ExerciseTableViewController ()
-@property (strong) NSArray *array;
+//@property (strong) NSArray *array;
 //@property (nonatomic,strong)NSArray* fetchedExercisesArray;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
@@ -246,9 +245,9 @@
 
     Exercise *currExercise = self.exerciseList[selectedPath.row];
     
-    infoVC.reps = [@"reps: " stringByAppendingString:[currExercise.reps stringValue]];
-    infoVC.hold = [@"hold: " stringByAppendingString:[currExercise.hold stringValue]];
-    infoVC.duration = [@"duration: " stringByAppendingString:[currExercise.hold stringValue]];
+    infoVC.reps = [@"Reps: " stringByAppendingString:[currExercise.reps stringValue]];
+    infoVC.hold = [@"Hold: " stringByAppendingString:[currExercise.hold stringValue]];
+    infoVC.duration = [@"Duration: " stringByAppendingString:[currExercise.hold stringValue]];
     infoVC.imgURL = currExercise.imgURL;
     infoVC.videoURL = currExercise.videoURL;
     infoVC.instruction = currExercise.instruction;

@@ -28,6 +28,8 @@
 		6B50CDF819120A1A00405A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDF719120A1A00405A83 /* User.m */; };
 		6B50CDFB19120A1A00405A83 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDFA19120A1A00405A83 /* Motivation.m */; };
 		6B50CDFE19120A1A00405A83 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDFD19120A1A00405A83 /* DailyCheckin.m */; };
+		6B50CE0119120B8A00405A83 /* MyExerciseTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CE0019120B8A00405A83 /* MyExerciseTVC.m */; };
+		6B50CE0519120D8500405A83 /* DoExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CE0419120D8500405A83 /* DoExerciseViewController.m */; };
 		6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B048190C2B340093FEF1 /* InspirationController.m */; };
 		6B54B04C190C49810093FEF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B04B190C49810093FEF1 /* README.md */; };
 		6B54B04F190C575D0093FEF1 /* GoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B04E190C575D0093FEF1 /* GoalController.m */; };
@@ -138,6 +140,10 @@
 		6B50CDFA19120A1A00405A83 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
 		6B50CDFC19120A1A00405A83 /* DailyCheckin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCheckin.h; sourceTree = "<group>"; };
 		6B50CDFD19120A1A00405A83 /* DailyCheckin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCheckin.m; sourceTree = "<group>"; };
+		6B50CDFF19120B8A00405A83 /* MyExerciseTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyExerciseTVC.h; sourceTree = "<group>"; };
+		6B50CE0019120B8A00405A83 /* MyExerciseTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyExerciseTVC.m; sourceTree = "<group>"; };
+		6B50CE0319120D8500405A83 /* DoExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoExerciseViewController.h; sourceTree = "<group>"; };
+		6B50CE0419120D8500405A83 /* DoExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoExerciseViewController.m; sourceTree = "<group>"; };
 		6B54B047190C2B340093FEF1 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		6B54B048190C2B340093FEF1 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		6B54B04B190C49810093FEF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -358,9 +364,24 @@
 			path = ../video;
 			sourceTree = "<group>";
 		};
+		6B50CE0219120B9500405A83 /* MyExercise */ = {
+			isa = PBXGroup;
+			children = (
+				6B50CE0319120D8500405A83 /* DoExerciseViewController.h */,
+				6B50CE0419120D8500405A83 /* DoExerciseViewController.m */,
+				6B54B058190DAA2C0093FEF1 /* RatingViewController.h */,
+				6B54B059190DAA2C0093FEF1 /* RatingViewController.m */,
+				6B50CDFF19120B8A00405A83 /* MyExerciseTVC.h */,
+				6B50CE0019120B8A00405A83 /* MyExerciseTVC.m */,
+			);
+			name = MyExercise;
+			sourceTree = "<group>";
+		};
 		6B54B04A190C2B390093FEF1 /* Motivation */ = {
 			isa = PBXGroup;
 			children = (
+				6B91A89618EE33EC00F36EF1 /* MotivationViewController.h */,
+				6B91A89718EE33EC00F36EF1 /* MotivationViewController.m */,
 				6B54B05B190DD4080093FEF1 /* InjuryController.h */,
 				6B54B05C190DD4080093FEF1 /* InjuryController.m */,
 				6B54B04D190C575D0093FEF1 /* GoalController.h */,
@@ -386,6 +407,8 @@
 		6B5BD9E818FA4C6700B22E01 /* FlowControl */ = {
 			isa = PBXGroup;
 			children = (
+				6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */,
+				6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */,
 				6B56200318F8BD0E0018FDE9 /* UsersTableViewController.h */,
 				6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */,
 				6B91A8F718EE658E00F36EF1 /* VPTNavigationController.h */,
@@ -539,16 +562,11 @@
 		6B77BDFD18EBFFD2009B71ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6B54B058190DAA2C0093FEF1 /* RatingViewController.h */,
-				6B54B059190DAA2C0093FEF1 /* RatingViewController.m */,
 				6B54B04A190C2B390093FEF1 /* Motivation */,
 				6B5BD9E818FA4C6700B22E01 /* FlowControl */,
-				6B5BD9FD18FB58DF00B22E01 /* Progress */,
 				6B5BD9EC18FA4EAD00B22E01 /* Exercise */,
-				6B91A89618EE33EC00F36EF1 /* MotivationViewController.h */,
-				6B91A89718EE33EC00F36EF1 /* MotivationViewController.m */,
-				6B77BDFA18EBFFC8009B71ED /* VPTMenuTableViewController.h */,
-				6B77BDFB18EBFFC8009B71ED /* VPTMenuTableViewController.m */,
+				6B50CE0219120B9500405A83 /* MyExercise */,
+				6B5BD9FD18FB58DF00B22E01 /* Progress */,
 				6B5BD9E518F9F43800B22E01 /* TimerViewController.h */,
 				6B5BD9E618F9F43800B22E01 /* TimerViewController.m */,
 				6B77BDD918EBF1A0009B71ED /* LoginViewController.h */,
@@ -781,6 +799,7 @@
 				6B91A8F318EE5C3400F36EF1 /* VPTHomeViewController.m in Sources */,
 				6B089FCD18F1B67600AEBB12 /* Users.xcdatamodeld in Sources */,
 				6B2A59DE1910C4DF00620E46 /* SimpleTableCell.m in Sources */,
+				6B50CE0119120B8A00405A83 /* MyExerciseTVC.m in Sources */,
 				6B50CDFB19120A1A00405A83 /* Motivation.m in Sources */,
 				6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */,
 				6B91A8D018EE4B6C00F36EF1 /* UINavigationBar+FlatUI.m in Sources */,
@@ -808,6 +827,7 @@
 				6B91A8DA18EE4CBE00F36EF1 /* SignUpViewController.m in Sources */,
 				6B91A8CB18EE4B6C00F36EF1 /* FUITextField.m in Sources */,
 				6B5BD9FC18FB58D600B22E01 /* ProgressTableViewController.m in Sources */,
+				6B50CE0519120D8500405A83 /* DoExerciseViewController.m in Sources */,
 				6B91A8EC18EE5A6500F36EF1 /* REFrostedContainerViewController.m in Sources */,
 				6B54B05D190DD4080093FEF1 /* InjuryController.m in Sources */,
 				6B91A8C918EE4B6C00F36EF1 /* FUISegmentedControl.m in Sources */,

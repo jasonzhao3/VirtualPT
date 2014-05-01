@@ -21,7 +21,7 @@
 #import "TimerViewController.h"
 #import "ExerciseTableViewController.h"
 #import "ProgressTableViewController.h"
-#import "RatingViewController.h"
+#import "MyExerciseTVC.h"
 
 @interface VPTMenuTableViewController ()
 
@@ -155,8 +155,8 @@
         ExerciseTableViewController *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"exerciseController"];
         navigationController.viewControllers = @[exerciseController];
     } else if (indexPath.section == 0 && indexPath.row == 3) {
-        RatingViewController *ratingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ratingController"];
-        navigationController.viewControllers = @[ratingViewController];
+        MyExerciseTVC *myExerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"myExerciseController"];
+        navigationController.viewControllers = @[myExerciseController];
     } else if (indexPath.section == 0 && indexPath.row == 4){
         ProgressTableViewController *progressController = [self.storyboard instantiateViewControllerWithIdentifier:@"progressController"];
         navigationController.viewControllers = @[progressController];
