@@ -2,7 +2,7 @@
 //  DailyCheckin.m
 //  VirtualPT
 //
-//  Created by Jason Zhao on 4/6/14.
+//  Created by Jason Zhao on 4/30/14.
 //  Copyright (c) 2014 Jason Zhao. All rights reserved.
 //
 
@@ -12,9 +12,9 @@
 
 @implementation DailyCheckin
 
-@dynamic timestamp;
-@dynamic feel;
 @dynamic comment;
+@dynamic feel;
+@dynamic timestamp;
 @dynamic checkinOfUser;
 
 @end

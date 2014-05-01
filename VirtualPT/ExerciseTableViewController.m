@@ -31,8 +31,9 @@
  */
 
 #import "ExerciseTableViewController.h"
+#import "ExerciseInfoViewController.h"
+
 #import "LoginViewController.h"
-#import "VideoPlayerViewController.h"
 #import "CHCSVParser.h"
 #import "VPTAppDelegate.h"
 #import "Exercise.h"
@@ -67,9 +68,7 @@
     // custom table cell
     static NSString *CellIdentifier = @"exerciseCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"SimpleTableCell"  bundle:nil]  forCellReuseIdentifier:CellIdentifier];
-//    [self.tableView registerClass:@"SimpleTableCell" forCellReuseIdentifier:CellIdentifier];
-    
-//    self.exerciseList = [NSArray arrayWithObjects:@"Knee Flextion", @"Double Knee To Chest Stretch", @"Short Arc Quad", @"Quad Set", @"Hamstring Set", nil];
+
 //    [self loadCSVData];
     self.exerciseList = [appDelegate getExerciseList];
     [self.tableView reloadData];
@@ -163,18 +162,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"didSelectRowAtIndexPath");
-    /*UIAlertView *messageAlert = [[UIAlertView alloc]
-     initWithTitle:@"Row Selected" message:@"You've selected a row" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];*/
-//    UIAlertView *messageAlert = [[UIAlertView alloc]
-//                                 initWithTitle:@"Row Selected" message:[tableData objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    
-//    // Display the Hello World Message
-//    [messageAlert show];
-    
     // Checked the selected row
     SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
     if (cell.isSelected == NO) {
         cell.checkImageView.frame = CGRectMake(60, 51, CHECK_SIZE, CHECK_SIZE);
         cell.checkImageView.image = [UIImage imageNamed:@"check"];
@@ -184,13 +174,13 @@
         cell.isSelected = NO;
     }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//    [self performSegueWithIdentifier:@"showExerciseSegue" sender:self];
+
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"showExerciseSegue" sender:self];
-    NSLog(@"tapped button at row: %@",cell.nameLabel.text);
+    //TODO: not sure whether this is the professional way to do this
+    [self performSegueWithIdentifier:@"showExerciseSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+//    NSLog(@"tapped button at row: %@",cell.nameLabel.text);
 }
 
 
@@ -235,44 +225,34 @@
 #pragma mark - Navigation
 
 
-//- (void)prepareVideoViewController:(VideoPlayerViewController *)ivc toDisplayVideo:(NSDictionary *)videoJson
-//{
-//    ivc.videoURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
-//    ivc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
-//}
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
 //    self.title = @"Back";
 //    NSLog(@"come to prepare for segue");
-//
-////    if ([sender isKindOfClass:[UITableViewCell class]]) {
-////        // find out which row in which section we're seguing from
-////        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-////        if (indexPath) {
-////            // found it ... are we doing the Display Photo segue?
-////            if ([segue.identifier isEqualToString:@"showExerciseSegue"]) {
-////                // yes ... is the destination an ImageViewController?
-////                if ([segue.destinationViewController isKindOfClass:[VideoPlayerViewController class]]) {
-////                    // yes ... then we know how to prepare for that segue!
-////                    [self prepareVideoViewController:segue.destinationViewController
-////                                      toDisplayPhoto:self.photos[indexPath.row]];
-////                }
-////            }
-////        }
-////    }
-//
-//    
-//}
-//
+
+    ExerciseInfoViewController *infoVC = segue.destinationViewController;
+    NSIndexPath *selectedPath = [self.tableView indexPathForCell:sender];
+//    NSLog (@"selected exercise is %@", self.exerciseList[selectedPath.row]);
+//    NSLog(@"select Path row is %ld", (long)selectedPath.row);
+    Exercise *currExercise = self.exerciseList[selectedPath.row];
+    NSLog(@"The current Exercise is %@", currExercise);
+    infoVC.reps = [@"reps: " stringByAppendingString:[currExercise.reps stringValue]];
+    infoVC.hold = [@"hold: " stringByAppendingString:[currExercise.hold stringValue]];
+    infoVC.duration = [@"duration: " stringByAppendingString:[currExercise.hold stringValue]];
+    infoVC.imgURL = currExercise.imgURL;
+    infoVC.videoURL = currExercise.videoURL;
+    infoVC.instruction = currExercise.instruction;
+//    NSLog (@"original video URL is %@", currExercise.videoURL);
+    
+//    NSLog(@"reps is %@", infoVC.reps);
+    
+}
 
 - (IBAction)showMenu:(id)sender {
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
-
     [self.frostedViewController presentMenuViewController];
-
 }
 
 

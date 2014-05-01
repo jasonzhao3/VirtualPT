@@ -4,9 +4,9 @@ from os import listdir
 from os.path import isfile, join
 
 
-path = '../hep2go/png/'
+path = '../video/'
 onlyfiles = [ f for f in listdir(path) if isfile(join(path,f)) ]
 print onlyfiles
 
 for img_file in onlyfiles:
-	print img_file
+    print img_file[:-4]

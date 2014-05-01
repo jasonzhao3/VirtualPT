@@ -29,4 +29,22 @@ TODO:
 
 20140429
 Done:
-1. 
+1. Customized Table cell with thumbnails and check label
+2. read exercise from csv and load into core data
+
+
+TODO:
+1. individual exercise info page
+2. individual exercise play page
+3. conditional segue
+4. merge play with exercise page
+5. add exercise from library
+
+
+
+20140430
+1. individual exercise info
+
+Note: 
+1.  Audio file was not located under "Copy Build Resources," which is located under "Build Phases".
+2. 

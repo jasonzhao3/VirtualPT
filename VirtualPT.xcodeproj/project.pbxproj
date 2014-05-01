@@ -8,17 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		6B089FCD18F1B67600AEBB12 /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FCB18F1B67600AEBB12 /* Users.xcdatamodeld */; };
-		6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */; };
-		6B089FE718F1CB2B00AEBB12 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE618F1CB2B00AEBB12 /* Motivation.m */; };
-		6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B089FE918F1CB2C00AEBB12 /* User.m */; };
 		6B2A59CD1910992600620E46 /* USPresident Wikipedia.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A59CC1910992600620E46 /* USPresident Wikipedia.csv */; };
 		6B2A59D119109AD000620E46 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A59D019109AD000620E46 /* CHCSVParser.m */; };
 		6B2A59D31910B10800620E46 /* hep2go.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A59D21910B10800620E46 /* hep2go.csv */; };
-		6B2A59D91910B95E00620E46 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A59D81910B95E00620E46 /* Exercise.m */; };
 		6B2A59DE1910C4DF00620E46 /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A59DC1910C4DF00620E46 /* SimpleTableCell.m */; };
 		6B2A59DF1910C4DF00620E46 /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A59DD1910C4DF00620E46 /* SimpleTableCell.xib */; };
-		6B54B045190C21DF0093FEF1 /* KneeFlextion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B043190C21DF0093FEF1 /* KneeFlextion.mp4 */; };
-		6B54B046190C21DF0093FEF1 /* SAQ.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B044190C21DF0093FEF1 /* SAQ.mp4 */; };
+		6B50CDD01911CF6800405A83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDCE1911CF6800405A83 /* Main.storyboard */; };
+		6B50CDD11911ED4000405A83 /* ELASTIC BAND - SIDELYING CLAM.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDBF1911C1D100405A83 /* ELASTIC BAND - SIDELYING CLAM.mp4 */; };
+		6B50CDD21911ED4000405A83 /* ELASTIC BAND - STRAIGHT LEG RAISE.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC01911C1D100405A83 /* ELASTIC BAND - STRAIGHT LEG RAISE.mp4 */; };
+		6B50CDD31911ED4000405A83 /* EXERCISE BALL - SUPINE KNEE BENDS.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC11911C1D100405A83 /* EXERCISE BALL - SUPINE KNEE BENDS.mp4 */; };
+		6B50CDD41911ED4000405A83 /* KNEE FLEXTION.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC21911C1D100405A83 /* KNEE FLEXTION.mp4 */; };
+		6B50CDD51911ED4000405A83 /* LOWER TRUNK ROTATIONS - LTR.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC31911C1D100405A83 /* LOWER TRUNK ROTATIONS - LTR.mp4 */; };
+		6B50CDD61911ED4000405A83 /* PATELLA INFERIOR GLIDE.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC41911C1D100405A83 /* PATELLA INFERIOR GLIDE.mp4 */; };
+		6B50CDD71911ED4000405A83 /* SEATED HEEL SLIDES.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC51911C1D100405A83 /* SEATED HEEL SLIDES.mp4 */; };
+		6B50CDD81911ED4000405A83 /* SIDELYING INVERSION.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC61911C1D100405A83 /* SIDELYING INVERSION.mp4 */; };
+		6B50CDD91911ED4000405A83 /* Static quad - VMO.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC71911C1D100405A83 /* Static quad - VMO.mp4 */; };
+		6B50CDDA1911ED4000405A83 /* WAND FLEXION.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC81911C1D100405A83 /* WAND FLEXION.mp4 */; };
+		6B50CDDD1911EFAA00405A83 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDDC1911EFAA00405A83 /* Exercise.m */; };
+		6B50CDE01911EFAA00405A83 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDDF1911EFAA00405A83 /* Motivation.m */; };
+		6B50CDE31911EFAA00405A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDE21911EFAA00405A83 /* User.m */; };
+		6B50CDE61911EFAA00405A83 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDE51911EFAA00405A83 /* DailyCheckin.m */; };
 		6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B048190C2B340093FEF1 /* InspirationController.m */; };
 		6B54B04C190C49810093FEF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B04B190C49810093FEF1 /* README.md */; };
 		6B54B04F190C575D0093FEF1 /* GoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B04E190C575D0093FEF1 /* GoalController.m */; };
@@ -31,7 +40,7 @@
 		6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56200418F8BD0E0018FDE9 /* UsersTableViewController.m */; };
 		6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9E618F9F43800B22E01 /* TimerViewController.m */; };
 		6B5BD9EB18FA4EA300B22E01 /* ExerciseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */; };
-		6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */; };
+		6B5BD9F118FB01BE00B22E01 /* ExerciseInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F018FB01BE00B22E01 /* ExerciseInfoController.m */; };
 		6B5BD9F918FB531E00B22E01 /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */; };
 		6B5BD9FC18FB58D600B22E01 /* ProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BD9FB18FB58D600B22E01 /* ProgressTableViewController.m */; };
 		6B5BDA3118FB828D00B22E01 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA3018FB828D00B22E01 /* ChartViewController.m */; };
@@ -87,7 +96,7 @@
 		6B91A8F018EE5A6500F36EF1 /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8EA18EE5A6500F36EF1 /* UIViewController+REFrostedViewController.m */; };
 		6B91A8F318EE5C3400F36EF1 /* VPTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8F218EE5C3400F36EF1 /* VPTHomeViewController.m */; };
 		6B91A8F918EE658E00F36EF1 /* VPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B91A8F818EE658E00F36EF1 /* VPTNavigationController.m */; };
-		D5C3ACE41C8C4B1194D4009E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B676C0CBC17F46F889A552ED /* libPods.a */; };
+		F810CF2AA8664A7EA98B457C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C37643C4E0BA4BA38D30728E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,23 +112,32 @@
 /* Begin PBXFileReference section */
 		13954BF66F474516B6A95078 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6B089FCC18F1B67600AEBB12 /* Users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Users.xcdatamodel; sourceTree = "<group>"; };
-		6B089FE218F1CB2B00AEBB12 /* DailyCheckin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCheckin.h; sourceTree = "<group>"; };
-		6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCheckin.m; sourceTree = "<group>"; };
-		6B089FE518F1CB2B00AEBB12 /* Motivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motivation.h; sourceTree = "<group>"; };
-		6B089FE618F1CB2B00AEBB12 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
-		6B089FE818F1CB2B00AEBB12 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		6B089FE918F1CB2C00AEBB12 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6B2A59CC1910992600620E46 /* USPresident Wikipedia.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = "USPresident Wikipedia.csv"; path = "VirtualPT/Files/USPresident Wikipedia.csv"; sourceTree = "<group>"; };
 		6B2A59CF19109AD000620E46 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
 		6B2A59D019109AD000620E46 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		6B2A59D21910B10800620E46 /* hep2go.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = hep2go.csv; path = VirtualPT/Files/hep2go.csv; sourceTree = "<group>"; };
-		6B2A59D71910B95E00620E46 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
-		6B2A59D81910B95E00620E46 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		6B2A59DB1910C4DF00620E46 /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
 		6B2A59DC1910C4DF00620E46 /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
 		6B2A59DD1910C4DF00620E46 /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SimpleTableCell.xib; path = ../SimpleTableCell/SimpleTableCell.xib; sourceTree = "<group>"; };
-		6B54B043190C21DF0093FEF1 /* KneeFlextion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = KneeFlextion.mp4; path = video/KneeFlextion.mp4; sourceTree = "<group>"; };
-		6B54B044190C21DF0093FEF1 /* SAQ.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SAQ.mp4; path = video/SAQ.mp4; sourceTree = "<group>"; };
+		6B50CDBF1911C1D100405A83 /* ELASTIC BAND - SIDELYING CLAM.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELASTIC BAND - SIDELYING CLAM.mp4"; sourceTree = "<group>"; };
+		6B50CDC01911C1D100405A83 /* ELASTIC BAND - STRAIGHT LEG RAISE.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELASTIC BAND - STRAIGHT LEG RAISE.mp4"; sourceTree = "<group>"; };
+		6B50CDC11911C1D100405A83 /* EXERCISE BALL - SUPINE KNEE BENDS.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EXERCISE BALL - SUPINE KNEE BENDS.mp4"; sourceTree = "<group>"; };
+		6B50CDC21911C1D100405A83 /* KNEE FLEXTION.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KNEE FLEXTION.mp4"; sourceTree = "<group>"; };
+		6B50CDC31911C1D100405A83 /* LOWER TRUNK ROTATIONS - LTR.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LOWER TRUNK ROTATIONS - LTR.mp4"; sourceTree = "<group>"; };
+		6B50CDC41911C1D100405A83 /* PATELLA INFERIOR GLIDE.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PATELLA INFERIOR GLIDE.mp4"; sourceTree = "<group>"; };
+		6B50CDC51911C1D100405A83 /* SEATED HEEL SLIDES.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SEATED HEEL SLIDES.mp4"; sourceTree = "<group>"; };
+		6B50CDC61911C1D100405A83 /* SIDELYING INVERSION.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SIDELYING INVERSION.mp4"; sourceTree = "<group>"; };
+		6B50CDC71911C1D100405A83 /* Static quad - VMO.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Static quad - VMO.mp4"; sourceTree = "<group>"; };
+		6B50CDC81911C1D100405A83 /* WAND FLEXION.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WAND FLEXION.mp4"; sourceTree = "<group>"; };
+		6B50CDCF1911CF6800405A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = VirtualPT/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B50CDDB1911EFAA00405A83 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		6B50CDDC1911EFAA00405A83 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		6B50CDDE1911EFAA00405A83 /* Motivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motivation.h; sourceTree = "<group>"; };
+		6B50CDDF1911EFAA00405A83 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
+		6B50CDE11911EFAA00405A83 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6B50CDE21911EFAA00405A83 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6B50CDE41911EFAA00405A83 /* DailyCheckin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCheckin.h; sourceTree = "<group>"; };
+		6B50CDE51911EFAA00405A83 /* DailyCheckin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCheckin.m; sourceTree = "<group>"; };
 		6B54B047190C2B340093FEF1 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		6B54B048190C2B340093FEF1 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		6B54B04B190C49810093FEF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -142,8 +160,8 @@
 		6B5BD9E618F9F43800B22E01 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		6B5BD9E918FA4EA300B22E01 /* ExerciseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewController.h; sourceTree = "<group>"; };
 		6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewController.m; sourceTree = "<group>"; };
-		6B5BD9EF18FB01BE00B22E01 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
-		6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		6B5BD9EF18FB01BE00B22E01 /* ExerciseInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseInfoViewController.h; sourceTree = "<group>"; };
+		6B5BD9F018FB01BE00B22E01 /* ExerciseInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseInfoController.m; sourceTree = "<group>"; };
 		6B5BD9F718FB531E00B22E01 /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
 		6B5BD9FA18FB58D600B22E01 /* ProgressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressTableViewController.h; sourceTree = "<group>"; };
@@ -178,7 +196,6 @@
 		6B77BDD218EBF1A0009B71ED /* VirtualPT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VirtualPT-Prefix.pch"; sourceTree = "<group>"; };
 		6B77BDD318EBF1A0009B71ED /* VPTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPTAppDelegate.h; sourceTree = "<group>"; };
 		6B77BDD418EBF1A0009B71ED /* VPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPTAppDelegate.m; sourceTree = "<group>"; };
-		6B77BDD718EBF1A0009B71ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B77BDD918EBF1A0009B71ED /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6B77BDDA18EBF1A0009B71ED /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6B77BDDC18EBF1A0009B71ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -250,7 +267,7 @@
 		6B91A8F218EE5C3400F36EF1 /* VPTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPTHomeViewController.m; sourceTree = "<group>"; };
 		6B91A8F718EE658E00F36EF1 /* VPTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPTNavigationController.h; path = ../VPTNavigationController.h; sourceTree = "<group>"; };
 		6B91A8F818EE658E00F36EF1 /* VPTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPTNavigationController.m; path = ../VPTNavigationController.m; sourceTree = "<group>"; };
-		B676C0CBC17F46F889A552ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37643C4E0BA4BA38D30728E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +279,7 @@
 				6B77BDC718EBF1A0009B71ED /* CoreGraphics.framework in Frameworks */,
 				6B77BDC918EBF1A0009B71ED /* UIKit.framework in Frameworks */,
 				6B77BDC518EBF1A0009B71ED /* Foundation.framework in Frameworks */,
-				D5C3ACE41C8C4B1194D4009E /* libPods.a in Frameworks */,
+				F810CF2AA8664A7EA98B457C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,15 +299,15 @@
 		6B089FCE18F1B68500AEBB12 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B50CDDB1911EFAA00405A83 /* Exercise.h */,
+				6B50CDE41911EFAA00405A83 /* DailyCheckin.h */,
+				6B50CDE51911EFAA00405A83 /* DailyCheckin.m */,
+				6B50CDE11911EFAA00405A83 /* User.h */,
+				6B50CDE21911EFAA00405A83 /* User.m */,
+				6B50CDDE1911EFAA00405A83 /* Motivation.h */,
+				6B50CDDF1911EFAA00405A83 /* Motivation.m */,
+				6B50CDDC1911EFAA00405A83 /* Exercise.m */,
 				6B089FCB18F1B67600AEBB12 /* Users.xcdatamodeld */,
-				6B2A59D71910B95E00620E46 /* Exercise.h */,
-				6B2A59D81910B95E00620E46 /* Exercise.m */,
-				6B089FE218F1CB2B00AEBB12 /* DailyCheckin.h */,
-				6B089FE318F1CB2B00AEBB12 /* DailyCheckin.m */,
-				6B089FE518F1CB2B00AEBB12 /* Motivation.h */,
-				6B089FE618F1CB2B00AEBB12 /* Motivation.m */,
-				6B089FE818F1CB2B00AEBB12 /* User.h */,
-				6B089FE918F1CB2C00AEBB12 /* User.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -298,8 +315,8 @@
 		6B089FCF18F1B69700AEBB12 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B50CDCE1911CF6800405A83 /* Main.storyboard */,
 				6B2A59DD1910C4DF00620E46 /* SimpleTableCell.xib */,
-				6B77BDD618EBF1A0009B71ED /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -321,6 +338,24 @@
 			);
 			name = SimpleTableCell;
 			path = ../SimpleTableCell;
+			sourceTree = "<group>";
+		};
+		6B50CDBE1911C1D100405A83 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				6B50CDBF1911C1D100405A83 /* ELASTIC BAND - SIDELYING CLAM.mp4 */,
+				6B50CDC01911C1D100405A83 /* ELASTIC BAND - STRAIGHT LEG RAISE.mp4 */,
+				6B50CDC11911C1D100405A83 /* EXERCISE BALL - SUPINE KNEE BENDS.mp4 */,
+				6B50CDC21911C1D100405A83 /* KNEE FLEXTION.mp4 */,
+				6B50CDC31911C1D100405A83 /* LOWER TRUNK ROTATIONS - LTR.mp4 */,
+				6B50CDC41911C1D100405A83 /* PATELLA INFERIOR GLIDE.mp4 */,
+				6B50CDC51911C1D100405A83 /* SEATED HEEL SLIDES.mp4 */,
+				6B50CDC61911C1D100405A83 /* SIDELYING INVERSION.mp4 */,
+				6B50CDC71911C1D100405A83 /* Static quad - VMO.mp4 */,
+				6B50CDC81911C1D100405A83 /* WAND FLEXION.mp4 */,
+			);
+			name = video;
+			path = ../video;
 			sourceTree = "<group>";
 		};
 		6B54B04A190C2B390093FEF1 /* Motivation */ = {
@@ -372,19 +407,10 @@
 				6B5BD9F818FB531E00B22E01 /* AddExerciseViewController.m */,
 				6B5BD9E918FA4EA300B22E01 /* ExerciseTableViewController.h */,
 				6B5BD9EA18FA4EA300B22E01 /* ExerciseTableViewController.m */,
-				6B5BD9EF18FB01BE00B22E01 /* VideoPlayerViewController.h */,
-				6B5BD9F018FB01BE00B22E01 /* VideoPlayerViewController.m */,
+				6B5BD9EF18FB01BE00B22E01 /* ExerciseInfoViewController.h */,
+				6B5BD9F018FB01BE00B22E01 /* ExerciseInfoController.m */,
 			);
 			name = Exercise;
-			sourceTree = "<group>";
-		};
-		6B5BD9F218FB08D700B22E01 /* video */ = {
-			isa = PBXGroup;
-			children = (
-				6B54B043190C21DF0093FEF1 /* KneeFlextion.mp4 */,
-				6B54B044190C21DF0093FEF1 /* SAQ.mp4 */,
-			);
-			name = video;
 			sourceTree = "<group>";
 		};
 		6B5BD9FD18FB58DF00B22E01 /* Progress */ = {
@@ -431,7 +457,6 @@
 				6B54B04B190C49810093FEF1 /* README.md */,
 				6B54B05E190E2F6E0093FEF1 /* hep2go_doc */,
 				6B77BDCA18EBF1A0009B71ED /* VirtualPT */,
-				6B5BD9F218FB08D700B22E01 /* video */,
 				6B77BDE918EBF1A0009B71ED /* VirtualPTTests */,
 				6B77BDC318EBF1A0009B71ED /* Frameworks */,
 				6B77BDC218EBF1A0009B71ED /* Products */,
@@ -456,7 +481,7 @@
 				6B77BDC618EBF1A0009B71ED /* CoreGraphics.framework */,
 				6B77BDC818EBF1A0009B71ED /* UIKit.framework */,
 				6B77BDE318EBF1A0009B71ED /* XCTest.framework */,
-				B676C0CBC17F46F889A552ED /* libPods.a */,
+				C37643C4E0BA4BA38D30728E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -464,6 +489,7 @@
 		6B77BDCA18EBF1A0009B71ED /* VirtualPT */ = {
 			isa = PBXGroup;
 			children = (
+				6B50CDBE1911C1D100405A83 /* video */,
 				6B77BDD318EBF1A0009B71ED /* VPTAppDelegate.h */,
 				6B77BDD418EBF1A0009B71ED /* VPTAppDelegate.m */,
 				6B089FCE18F1B68500AEBB12 /* Data Model */,
@@ -683,15 +709,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B50CDD11911ED4000405A83 /* ELASTIC BAND - SIDELYING CLAM.mp4 in Resources */,
+				6B50CDD21911ED4000405A83 /* ELASTIC BAND - STRAIGHT LEG RAISE.mp4 in Resources */,
+				6B50CDD31911ED4000405A83 /* EXERCISE BALL - SUPINE KNEE BENDS.mp4 in Resources */,
+				6B50CDD41911ED4000405A83 /* KNEE FLEXTION.mp4 in Resources */,
+				6B50CDD51911ED4000405A83 /* LOWER TRUNK ROTATIONS - LTR.mp4 in Resources */,
+				6B50CDD61911ED4000405A83 /* PATELLA INFERIOR GLIDE.mp4 in Resources */,
+				6B50CDD71911ED4000405A83 /* SEATED HEEL SLIDES.mp4 in Resources */,
+				6B50CDD81911ED4000405A83 /* SIDELYING INVERSION.mp4 in Resources */,
+				6B50CDD91911ED4000405A83 /* Static quad - VMO.mp4 in Resources */,
+				6B50CDDA1911ED4000405A83 /* WAND FLEXION.mp4 in Resources */,
 				6B2A59D31910B10800620E46 /* hep2go.csv in Resources */,
 				6B2A59DF1910C4DF00620E46 /* SimpleTableCell.xib in Resources */,
 				6B2A59CD1910992600620E46 /* USPresident Wikipedia.csv in Resources */,
+				6B50CDD01911CF6800405A83 /* Main.storyboard in Resources */,
 				6B54B04C190C49810093FEF1 /* README.md in Resources */,
 				6B77BDDD18EBF1A0009B71ED /* Images.xcassets in Resources */,
 				6B54B05F190E2F6E0093FEF1 /* hep2go_doc in Resources */,
 				6B77BDCF18EBF1A0009B71ED /* InfoPlist.strings in Resources */,
-				6B54B046190C21DF0093FEF1 /* SAQ.mp4 in Resources */,
-				6B54B045190C21DF0093FEF1 /* KneeFlextion.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +781,7 @@
 				6B91A8F318EE5C3400F36EF1 /* VPTHomeViewController.m in Sources */,
 				6B089FCD18F1B67600AEBB12 /* Users.xcdatamodeld in Sources */,
 				6B2A59DE1910C4DF00620E46 /* SimpleTableCell.m in Sources */,
+				6B50CDE01911EFAA00405A83 /* Motivation.m in Sources */,
 				6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */,
 				6B91A8D018EE4B6C00F36EF1 /* UINavigationBar+FlatUI.m in Sources */,
 				6B91A8C618EE4B6C00F36EF1 /* FUIButton.m in Sources */,
@@ -756,20 +792,17 @@
 				6B5BDA4618FB97AC00B22E01 /* PNBarChart.m in Sources */,
 				6B5BDA4918FB97AC00B22E01 /* PNColor.m in Sources */,
 				6B77BDD118EBF1A0009B71ED /* main.m in Sources */,
-				6B2A59D91910B95E00620E46 /* Exercise.m in Sources */,
 				6B5BDA4718FB97AC00B22E01 /* PNChartLabel.m in Sources */,
 				6B2A59D119109AD000620E46 /* CHCSVParser.m in Sources */,
 				6B91A8D118EE4B6C00F36EF1 /* UIPopoverController+FlatUI.m in Sources */,
 				6B91A8C818EE4B6C00F36EF1 /* FUIPopoverBackgroundView.m in Sources */,
 				6B91A8D618EE4B6C00F36EF1 /* UITableViewCell+FlatUI.m in Sources */,
 				6B91A8CA18EE4B6C00F36EF1 /* FUISwitch.m in Sources */,
-				6B089FE718F1CB2B00AEBB12 /* Motivation.m in Sources */,
 				6B91A8CC18EE4B6C00F36EF1 /* UIBarButtonItem+FlatUI.m in Sources */,
 				6B5BDA3118FB828D00B22E01 /* ChartViewController.m in Sources */,
 				6B77BDFC18EBFFC8009B71ED /* VPTMenuTableViewController.m in Sources */,
 				6B91A8D318EE4B6C00F36EF1 /* UISlider+FlatUI.m in Sources */,
 				6B5BD9EB18FA4EA300B22E01 /* ExerciseTableViewController.m in Sources */,
-				6B089FE418F1CB2B00AEBB12 /* DailyCheckin.m in Sources */,
 				6B54B056190D6DB80093FEF1 /* ListItem.m in Sources */,
 				6B54B05A190DAA2C0093FEF1 /* RatingViewController.m in Sources */,
 				6B91A8DA18EE4CBE00F36EF1 /* SignUpViewController.m in Sources */,
@@ -778,7 +811,7 @@
 				6B91A8EC18EE5A6500F36EF1 /* REFrostedContainerViewController.m in Sources */,
 				6B54B05D190DD4080093FEF1 /* InjuryController.m in Sources */,
 				6B91A8C918EE4B6C00F36EF1 /* FUISegmentedControl.m in Sources */,
-				6B5BD9F118FB01BE00B22E01 /* VideoPlayerViewController.m in Sources */,
+				6B5BD9F118FB01BE00B22E01 /* ExerciseInfoController.m in Sources */,
 				6B91A8D518EE4B6C00F36EF1 /* UITabBar+FlatUI.m in Sources */,
 				6B54B057190D6DB80093FEF1 /* POHorizontalList.m in Sources */,
 				6B91A8D718EE4B6C00F36EF1 /* UIToolbar+FlatUI.m in Sources */,
@@ -786,9 +819,11 @@
 				6B91A8CD18EE4B6C00F36EF1 /* UIColor+FlatUI.m in Sources */,
 				6B91A8EE18EE5A6500F36EF1 /* UIImage+REFrostedViewController.m in Sources */,
 				6B5BDA4C18FB97AC00B22E01 /* PNLineChartDataItem.m in Sources */,
+				6B50CDE31911EFAA00405A83 /* User.m in Sources */,
 				6B91A89818EE33EC00F36EF1 /* MotivationViewController.m in Sources */,
 				6B91A8ED18EE5A6500F36EF1 /* REFrostedViewController.m in Sources */,
 				6B91A8EB18EE5A6500F36EF1 /* RECommonFunctions.m in Sources */,
+				6B50CDDD1911EFAA00405A83 /* Exercise.m in Sources */,
 				6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */,
 				6B91A8DD18EE598A00F36EF1 /* VPTRootViewController.m in Sources */,
 				6B91A8CF18EE4B6C00F36EF1 /* UIImage+FlatUI.m in Sources */,
@@ -796,9 +831,9 @@
 				6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */,
 				6B91A8F918EE658E00F36EF1 /* VPTNavigationController.m in Sources */,
 				6B91A8D418EE4B6C00F36EF1 /* UIStepper+FlatUI.m in Sources */,
+				6B50CDE61911EFAA00405A83 /* DailyCheckin.m in Sources */,
 				6B91A8D218EE4B6C00F36EF1 /* UIProgressView+FlatUI.m in Sources */,
 				6B5BDA4518FB97AC00B22E01 /* PNBar.m in Sources */,
-				6B089FEA18F1CB2C00AEBB12 /* User.m in Sources */,
 				6B5BDA4A18FB97AC00B22E01 /* PNLineChart.m in Sources */,
 				6B77BDD518EBF1A0009B71ED /* VPTAppDelegate.m in Sources */,
 				6B54B04F190C575D0093FEF1 /* GoalController.m in Sources */,
@@ -827,20 +862,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6B50CDCE1911CF6800405A83 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B50CDCF1911CF6800405A83 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		6B77BDCD18EBF1A0009B71ED /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6B77BDCE18EBF1A0009B71ED /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6B77BDD618EBF1A0009B71ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B77BDD718EBF1A0009B71ED /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		6B77BDEC18EBF1A0009B71ED /* InfoPlist.strings */ = {
@@ -933,6 +969,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VirtualPT/VirtualPT-Prefix.pch";
 				INFOPLIST_FILE = "VirtualPT/VirtualPT-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -947,6 +987,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VirtualPT/VirtualPT-Prefix.pch";
 				INFOPLIST_FILE = "VirtualPT/VirtualPT-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
