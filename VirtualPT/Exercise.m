@@ -7,6 +7,7 @@
 //
 
 #import "Exercise.h"
+#import "User.h"
 
 
 @implementation Exercise
@@ -18,5 +19,6 @@
 @dynamic name;
 @dynamic reps;
 @dynamic videoURL;
+@dynamic exerciseBelongsToUsers;
 
 @end

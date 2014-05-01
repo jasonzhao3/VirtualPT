@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "DailyCheckin.h"
+#import "Exercise.h"
 #import "Motivation.h"
 
 
@@ -20,5 +21,6 @@
 @dynamic userName;
 @dynamic userHasDailyCheckin;
 @dynamic userHasMotivation;
+@dynamic userHasExercises;
 
 @end

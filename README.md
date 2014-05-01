@@ -48,3 +48,8 @@ TODO:
 Note: 
 1.  Audio file was not located under "Copy Build Resources," which is located under "Build Phases".
 2. 
+
+TODO:
+1. encapsulate code into category
+2. radio for distributed app
+3. 

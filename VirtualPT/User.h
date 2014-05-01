@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class DailyCheckin, Motivation;
+@class DailyCheckin, Exercise, Motivation;
 
 @interface User : NSManagedObject
 
@@ -19,7 +19,8 @@
 @property (nonatomic, retain) NSString * userId;
 @property (nonatomic, retain) NSString * userName;
 @property (nonatomic, retain) NSSet *userHasDailyCheckin;
-@property (nonatomic, retain) Motivation *userHasMotivation;
+@property (nonatomic, retain) NSSet *userHasMotivation;
+@property (nonatomic, retain) NSSet *userHasExercises;
 @end
 
 @interface User (CoreDataGeneratedAccessors)
@@ -28,5 +29,15 @@
 - (void)removeUserHasDailyCheckinObject:(DailyCheckin *)value;
 - (void)addUserHasDailyCheckin:(NSSet *)values;
 - (void)removeUserHasDailyCheckin:(NSSet *)values;
+
+- (void)addUserHasMotivationObject:(Motivation *)value;
+- (void)removeUserHasMotivationObject:(Motivation *)value;
+- (void)addUserHasMotivation:(NSSet *)values;
+- (void)removeUserHasMotivation:(NSSet *)values;
+
+- (void)addUserHasExercisesObject:(Exercise *)value;
+- (void)removeUserHasExercisesObject:(Exercise *)value;
+- (void)addUserHasExercises:(NSSet *)values;
+- (void)removeUserHasExercises:(NSSet *)values;
 
 @end

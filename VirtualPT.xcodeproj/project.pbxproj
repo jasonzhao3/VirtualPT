@@ -24,10 +24,10 @@
 		6B50CDD81911ED4000405A83 /* SIDELYING INVERSION.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC61911C1D100405A83 /* SIDELYING INVERSION.mp4 */; };
 		6B50CDD91911ED4000405A83 /* Static quad - VMO.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC71911C1D100405A83 /* Static quad - VMO.mp4 */; };
 		6B50CDDA1911ED4000405A83 /* WAND FLEXION.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B50CDC81911C1D100405A83 /* WAND FLEXION.mp4 */; };
-		6B50CDDD1911EFAA00405A83 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDDC1911EFAA00405A83 /* Exercise.m */; };
-		6B50CDE01911EFAA00405A83 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDDF1911EFAA00405A83 /* Motivation.m */; };
-		6B50CDE31911EFAA00405A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDE21911EFAA00405A83 /* User.m */; };
-		6B50CDE61911EFAA00405A83 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDE51911EFAA00405A83 /* DailyCheckin.m */; };
+		6B50CDF519120A1A00405A83 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDF419120A1A00405A83 /* Exercise.m */; };
+		6B50CDF819120A1A00405A83 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDF719120A1A00405A83 /* User.m */; };
+		6B50CDFB19120A1A00405A83 /* Motivation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDFA19120A1A00405A83 /* Motivation.m */; };
+		6B50CDFE19120A1A00405A83 /* DailyCheckin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50CDFD19120A1A00405A83 /* DailyCheckin.m */; };
 		6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B048190C2B340093FEF1 /* InspirationController.m */; };
 		6B54B04C190C49810093FEF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B54B04B190C49810093FEF1 /* README.md */; };
 		6B54B04F190C575D0093FEF1 /* GoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54B04E190C575D0093FEF1 /* GoalController.m */; };
@@ -130,14 +130,14 @@
 		6B50CDC71911C1D100405A83 /* Static quad - VMO.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Static quad - VMO.mp4"; sourceTree = "<group>"; };
 		6B50CDC81911C1D100405A83 /* WAND FLEXION.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WAND FLEXION.mp4"; sourceTree = "<group>"; };
 		6B50CDCF1911CF6800405A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = VirtualPT/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6B50CDDB1911EFAA00405A83 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
-		6B50CDDC1911EFAA00405A83 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
-		6B50CDDE1911EFAA00405A83 /* Motivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motivation.h; sourceTree = "<group>"; };
-		6B50CDDF1911EFAA00405A83 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
-		6B50CDE11911EFAA00405A83 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		6B50CDE21911EFAA00405A83 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		6B50CDE41911EFAA00405A83 /* DailyCheckin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCheckin.h; sourceTree = "<group>"; };
-		6B50CDE51911EFAA00405A83 /* DailyCheckin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCheckin.m; sourceTree = "<group>"; };
+		6B50CDF319120A1A00405A83 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		6B50CDF419120A1A00405A83 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		6B50CDF619120A1A00405A83 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6B50CDF719120A1A00405A83 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6B50CDF919120A1A00405A83 /* Motivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motivation.h; sourceTree = "<group>"; };
+		6B50CDFA19120A1A00405A83 /* Motivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Motivation.m; sourceTree = "<group>"; };
+		6B50CDFC19120A1A00405A83 /* DailyCheckin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCheckin.h; sourceTree = "<group>"; };
+		6B50CDFD19120A1A00405A83 /* DailyCheckin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCheckin.m; sourceTree = "<group>"; };
 		6B54B047190C2B340093FEF1 /* InspirationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationController.h; sourceTree = "<group>"; };
 		6B54B048190C2B340093FEF1 /* InspirationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationController.m; sourceTree = "<group>"; };
 		6B54B04B190C49810093FEF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -299,15 +299,15 @@
 		6B089FCE18F1B68500AEBB12 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				6B50CDDB1911EFAA00405A83 /* Exercise.h */,
-				6B50CDE41911EFAA00405A83 /* DailyCheckin.h */,
-				6B50CDE51911EFAA00405A83 /* DailyCheckin.m */,
-				6B50CDE11911EFAA00405A83 /* User.h */,
-				6B50CDE21911EFAA00405A83 /* User.m */,
-				6B50CDDE1911EFAA00405A83 /* Motivation.h */,
-				6B50CDDF1911EFAA00405A83 /* Motivation.m */,
-				6B50CDDC1911EFAA00405A83 /* Exercise.m */,
 				6B089FCB18F1B67600AEBB12 /* Users.xcdatamodeld */,
+				6B50CDFC19120A1A00405A83 /* DailyCheckin.h */,
+				6B50CDFD19120A1A00405A83 /* DailyCheckin.m */,
+				6B50CDF919120A1A00405A83 /* Motivation.h */,
+				6B50CDFA19120A1A00405A83 /* Motivation.m */,
+				6B50CDF619120A1A00405A83 /* User.h */,
+				6B50CDF719120A1A00405A83 /* User.m */,
+				6B50CDF319120A1A00405A83 /* Exercise.h */,
+				6B50CDF419120A1A00405A83 /* Exercise.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -781,7 +781,7 @@
 				6B91A8F318EE5C3400F36EF1 /* VPTHomeViewController.m in Sources */,
 				6B089FCD18F1B67600AEBB12 /* Users.xcdatamodeld in Sources */,
 				6B2A59DE1910C4DF00620E46 /* SimpleTableCell.m in Sources */,
-				6B50CDE01911EFAA00405A83 /* Motivation.m in Sources */,
+				6B50CDFB19120A1A00405A83 /* Motivation.m in Sources */,
 				6B54B049190C2B340093FEF1 /* InspirationController.m in Sources */,
 				6B91A8D018EE4B6C00F36EF1 /* UINavigationBar+FlatUI.m in Sources */,
 				6B91A8C618EE4B6C00F36EF1 /* FUIButton.m in Sources */,
@@ -819,11 +819,11 @@
 				6B91A8CD18EE4B6C00F36EF1 /* UIColor+FlatUI.m in Sources */,
 				6B91A8EE18EE5A6500F36EF1 /* UIImage+REFrostedViewController.m in Sources */,
 				6B5BDA4C18FB97AC00B22E01 /* PNLineChartDataItem.m in Sources */,
-				6B50CDE31911EFAA00405A83 /* User.m in Sources */,
 				6B91A89818EE33EC00F36EF1 /* MotivationViewController.m in Sources */,
+				6B50CDF819120A1A00405A83 /* User.m in Sources */,
 				6B91A8ED18EE5A6500F36EF1 /* REFrostedViewController.m in Sources */,
 				6B91A8EB18EE5A6500F36EF1 /* RECommonFunctions.m in Sources */,
-				6B50CDDD1911EFAA00405A83 /* Exercise.m in Sources */,
+				6B50CDF519120A1A00405A83 /* Exercise.m in Sources */,
 				6B56200518F8BD0E0018FDE9 /* UsersTableViewController.m in Sources */,
 				6B91A8DD18EE598A00F36EF1 /* VPTRootViewController.m in Sources */,
 				6B91A8CF18EE4B6C00F36EF1 /* UIImage+FlatUI.m in Sources */,
@@ -831,7 +831,7 @@
 				6B5BD9E718F9F43800B22E01 /* TimerViewController.m in Sources */,
 				6B91A8F918EE658E00F36EF1 /* VPTNavigationController.m in Sources */,
 				6B91A8D418EE4B6C00F36EF1 /* UIStepper+FlatUI.m in Sources */,
-				6B50CDE61911EFAA00405A83 /* DailyCheckin.m in Sources */,
+				6B50CDFE19120A1A00405A83 /* DailyCheckin.m in Sources */,
 				6B91A8D218EE4B6C00F36EF1 /* UIProgressView+FlatUI.m in Sources */,
 				6B5BDA4518FB97AC00B22E01 /* PNBar.m in Sources */,
 				6B5BDA4A18FB97AC00B22E01 /* PNLineChart.m in Sources */,

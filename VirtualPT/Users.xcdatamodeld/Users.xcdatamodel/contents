@@ -14,6 +14,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exerciseBelongsToUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="userHasExercises" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Motivation" representedClassName="Motivation" syncable="YES">
         <attribute name="q1" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,12 +32,13 @@
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="userHasDailyCheckin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DailyCheckin" inverseName="checkinOfUser" inverseEntity="DailyCheckin" syncable="YES"/>
-        <relationship name="userHasMotivation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Motivation" inverseName="motivationOfUser" inverseEntity="Motivation" syncable="YES"/>
+        <relationship name="userHasExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseBelongsToUsers" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="userHasMotivation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Motivation" inverseName="motivationOfUser" inverseEntity="Motivation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DailyCheckin" positionX="-227" positionY="-130" width="128" height="103"/>
-        <element name="Exercise" positionX="-513" positionY="72" width="128" height="148"/>
-        <element name="Motivation" positionX="-225" positionY="45" width="128" height="148"/>
-        <element name="User" positionX="-513" positionY="-108" width="128" height="148"/>
+        <element name="DailyCheckin" positionX="682" positionY="-832" width="128" height="103"/>
+        <element name="Exercise" positionX="394" positionY="-505" width="128" height="163"/>
+        <element name="Motivation" positionX="684" positionY="-657" width="128" height="148"/>
+        <element name="User" positionX="360" positionY="-756" width="128" height="163"/>
     </elements>
 </model>

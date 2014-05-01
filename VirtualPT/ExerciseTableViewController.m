@@ -38,6 +38,7 @@
 #import "VPTAppDelegate.h"
 #import "Exercise.h"
 #import "SimpleTableCell.h"
+#import "User.h"
 
 #define CELL_HEIGHT 72
 #define THUMBNAIL_SIZE 66
@@ -164,12 +165,14 @@
 {
     // Checked the selected row
     SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
-
+    Exercise *currExercise = self.exerciseList[indexPath.row];
+    
     if (cell.isSelected == NO) {
         cell.checkImageView.frame = CGRectMake(60, 51, CHECK_SIZE, CHECK_SIZE);
         cell.checkImageView.image = [UIImage imageNamed:@"check"];
         cell.isSelected = YES;
         cell.nameLabel.textColor = [UIColor lightGrayColor];
+        [self addExerciseToDatabase:currExercise];
     } else {
         cell.checkImageView.image = nil;
         cell.isSelected = NO;
@@ -183,6 +186,14 @@
     //TODO: not sure whether this is the professional way to do this
     [self performSegueWithIdentifier:@"showExerciseSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
 //    NSLog(@"tapped button at row: %@",cell.nameLabel.text);
+}
+
+
+#pragma -mark database manipulation
+- (void)addExerciseToDatabase:(Exercise *)exercise
+{
+    User *user = NULL;
+    
 }
 
 
@@ -230,15 +241,11 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    self.title = @"Back";
-//    NSLog(@"come to prepare for segue");
-
     ExerciseInfoViewController *infoVC = segue.destinationViewController;
     NSIndexPath *selectedPath = [self.tableView indexPathForCell:sender];
-//    NSLog (@"selected exercise is %@", self.exerciseList[selectedPath.row]);
-//    NSLog(@"select Path row is %ld", (long)selectedPath.row);
+
     Exercise *currExercise = self.exerciseList[selectedPath.row];
-    NSLog(@"The current Exercise is %@", currExercise);
+    
     infoVC.reps = [@"reps: " stringByAppendingString:[currExercise.reps stringValue]];
     infoVC.hold = [@"hold: " stringByAppendingString:[currExercise.hold stringValue]];
     infoVC.duration = [@"duration: " stringByAppendingString:[currExercise.hold stringValue]];
@@ -246,8 +253,6 @@
     infoVC.videoURL = currExercise.videoURL;
     infoVC.instruction = currExercise.instruction;
 //    NSLog (@"original video URL is %@", currExercise.videoURL);
-    
-//    NSLog(@"reps is %@", infoVC.reps);
     
 }
 
