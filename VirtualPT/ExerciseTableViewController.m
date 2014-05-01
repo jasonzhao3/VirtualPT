@@ -169,9 +169,11 @@
         cell.checkImageView.frame = CGRectMake(60, 51, CHECK_SIZE, CHECK_SIZE);
         cell.checkImageView.image = [UIImage imageNamed:@"check"];
         cell.isSelected = YES;
+        cell.nameLabel.textColor = [UIColor lightGrayColor];
     } else {
         cell.checkImageView.image = nil;
         cell.isSelected = NO;
+        cell.nameLabel.textColor = [UIColor blackColor];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
