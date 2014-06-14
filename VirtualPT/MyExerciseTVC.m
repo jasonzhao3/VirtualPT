@@ -27,21 +27,29 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//    VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//    self.managedObjectContext = appDelegate.managedObjectContext;
-//
-//    // custom table cell
-//    static NSString *CellIdentifier = @"exerciseCell";
-//    [self.tableView registerNib:[UINib nibWithNibName:@"SimpleTableCell"  bundle:nil]  forCellReuseIdentifier:CellIdentifier];
-//    
-//    
-//    self.exerciseList = [appDelegate getExerciseList];
-//    [self.tableView reloadData];
+    
+    // Load data from Parse for this particular user
+    PFUser *currUser = [PFUser currentUser];
+    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"Schedule"];
+    [scheduleQuery includeKey:@"exercise"];
+    [scheduleQuery whereKey:@"user" equalTo:currUser];
+    [scheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully retrieved %d exercises.", objects.count);
+            self.exerciseList = [self parseScheduleExerciseList:objects];
+            [self.tableView reloadData];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,24 +57,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SimpleTableCell *cell = (SimpleTableCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Checked the selected row
-//    SimpleTableCell *cell = (SimpleTableCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    Exercise *currExercise = self.exerciseList[indexPath.row];
-////    
-//    if (cell.isSelected == NO) {
-//        cell.checkImageView.frame = CGRectMake(60, 51, CHECK_SIZE, CHECK_SIZE);
-//        cell.checkImageView.image = [UIImage imageNamed:@"check"];
-//        cell.isSelected = YES;
-//        cell.nameLabel.textColor = [UIColor lightGrayColor];
-//        [self addExerciseToDatabase:currExercise];
-//    } else {
-//        cell.checkImageView.image = nil;
-//        cell.isSelected = NO;
-//        cell.nameLabel.textColor = [UIColor blackColor];
-//    }
     [self performSegueWithIdentifier:@"doExerciseSegue" sender:[tableView cellForRowAtIndexPath:indexPath]];
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -82,11 +82,11 @@
     DoExerciseViewController *doVC = segue.destinationViewController;
     NSIndexPath *selectedPath = [self.tableView indexPathForCell:sender];
     
-    Exercise *currExercise = self.exerciseList[selectedPath.row];
-    doVC.exerciseName = currExercise.name;
-    doVC.imgURL = currExercise.imgURL;
-    doVC.videoURL = currExercise.videoURL;
-    doVC.duration = currExercise.duration;
+//    Exercise *currExercise = self.exerciseList[selectedPath.row];
+//    doVC.exerciseName = currExercise.name;
+//    doVC.imgURL = currExercise.imgURL;
+//    doVC.videoURL = currExercise.videoURL;
+//    doVC.duration = currExercise.duration;
 }
 
 @end

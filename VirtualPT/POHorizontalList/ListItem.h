@@ -20,6 +20,12 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIButton *imageButton;
 
+@property (nonatomic, retain) UIImageView *checkView;
+
+// add isSelected to each button other than maintain a list of isSelected status
+// More memory and managment friendly in terms of selector
+@property (nonatomic, assign) BOOL isSelected;
+
 - (id)initWithFrame:(CGRect)frame image:(UIImage *)image text:(NSString *)imageTitle;
 
 @end

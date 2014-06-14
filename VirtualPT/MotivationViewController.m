@@ -8,6 +8,8 @@
 
 #import "MotivationViewController.h"
 #import "LoginViewController.h"
+#define BAR_BUTTON_SIZE 32
+
 
 @interface MotivationViewController ()
 
@@ -27,6 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    self.navigationItem.leftBarButtonItem.image = [UIImage imageNamed:@"menu"];
+    [self setCustomNavigationButton];
+    [self updateProfileLabel];
+
     // Do any additional setup after loading the view.
 }
 
@@ -35,6 +41,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - updateUI
+- (void)updateProfileLabel
+{
+    PFUser *currUser = [PFUser currentUser];
+    PFObject *profile = currUser[@"profile"];
+    
+    if ([profile isEqual:[NSNull null]]) {
+        [self.createProfileButtonView setTitle:@"New Profile" forState:UIControlStateNormal];
+        self.injuryLabel.text = @"Please add your profile by clicking \"Create Profile\"";
+        self.goalLabel.text = @"";
+        self.inspirationLabel.text = @"";
+    } else {
+        [self.createProfileButtonView setTitle:@"Edit Profile" forState:UIControlStateNormal];
+        [profile fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            self.injuryLabel.text = profile[@"injury"];
+        }];
+
+    }
+
+//    self.goalLabel.text = profile[@"goal"];
+
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -59,17 +91,6 @@
 
 }
 
-- (IBAction)logout:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] init];
-    
-    [alert setTitle:@"Confirm"];
-    [alert setMessage:@"Do you really want to logout?"];
-    [alert setDelegate:self];
-    [alert addButtonWithTitle:@"Yes"];
-    [alert addButtonWithTitle:@"No"];
-    [alert show];
-
-}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -89,6 +110,23 @@
         NSLog(@"clicked no!");
     }
 }
+
+
+- (void)setCustomNavigationButton
+{
+    UIImage* img = [UIImage imageNamed:@"menu"];
+    CGRect frameimg = CGRectMake(0, 0, BAR_BUTTON_SIZE, BAR_BUTTON_SIZE);
+    UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
+    [someButton setBackgroundImage:img forState:UIControlStateNormal];
+    [someButton addTarget:self action:@selector(backToMenueSegue)
+         forControlEvents:UIControlEventTouchUpInside];
+    [someButton setShowsTouchWhenHighlighted:YES];
+    
+    UIBarButtonItem *backButton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
+    self.navigationItem.leftBarButtonItem=backButton;
+}
+
+
 
 
 @end

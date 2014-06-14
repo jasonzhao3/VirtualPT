@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
+#import "VPTBaseViewController.h"
+#import <Parse/Parse.h>
 
-@interface MotivationViewController : UIViewController
+@interface MotivationViewController : VPTBaseViewController
 - (IBAction)showMenu:(id)sender;
-- (IBAction)logout:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *injuryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inspirationLabel;
+@property (weak, nonatomic) IBOutlet UIButton *createProfileButtonView;
 
 @end

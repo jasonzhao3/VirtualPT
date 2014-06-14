@@ -49,6 +49,7 @@
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [self addSubview:titleLabel];
         
+
         // Background shadow
 //        CAGradientLayer *dropshadowLayer = [CAGradientLayer layer];
 //        dropshadowLayer.contentsScale = scale;
@@ -72,10 +73,11 @@
 
 - (void)itemTapped:(UITapGestureRecognizer *)recognizer {
     ListItem *item = (ListItem *)recognizer.view;
-
+    
     if (item != nil) {
         [self.delegate didSelectItem:item];
     }
+    item.isSelected = !item.isSelected;
 }
 
 @end

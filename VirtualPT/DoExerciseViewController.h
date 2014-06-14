@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "AudioToolbox/AudioServices.h"
 
 @interface DoExerciseViewController : UIViewController
-@property(strong, nonatomic) NSString *exerciseName;
-@property(strong, nonatomic) NSString *imgURL;
-@property(strong, nonatomic) NSString *videoURL;
-@property(strong, nonatomic) NSNumber *duration;
+@property(strong, nonatomic) NSArray *exerciseList;
+//@property(strong, nonatomic) NSString *exerciseName;
+//@property(strong, nonatomic) NSString *imgURL;
+//@property(strong, nonatomic) NSString *videoURL;
+//@property(strong, nonatomic) NSNumber *duration;
 @end
+

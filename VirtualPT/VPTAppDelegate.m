@@ -7,6 +7,7 @@
 //
 
 #import "VPTAppDelegate.h"
+
 @interface VPTAppDelegate()
 
 @end
@@ -26,11 +27,65 @@
 {
     // Override point for customization after application launch.
     // set the navigation bar color
+    //    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x4cda64)];
+    
+    
+    // For Parse web service functionality
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-//    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x4cda64)];
+    [Parse setApplicationId:@"L6SLBxrQtNVjvdO8TCaYH7rpMHStR832rJoTloW0"
+                  clientKey:@"NosuwaRbR1wFhGdK4jpptTEcJTjbDMaFfDIpoGNO"];
+    
+    // For Parse Push notification
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
 
+    // For facebook login
+    [PFFacebookUtils initializeFacebook];
+    
+    // For Parse Tracking
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    // For Twitter Login
+    [PFTwitterUtils initializeWithConsumerKey:@"V9hkb42fZndNUxY6Og01Ro97U"
+                               consumerSecret:@"gyapLsWKvBHH5mk85q8rHoyyC4x8cuJyVyo46xbf5hcKwswNuQ"];
+    
     return YES;
 }
+
+#pragma mark - facebook delegation
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+
+
+#pragma mark - push notification
+// Delegation for push notification
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
@@ -133,6 +188,7 @@
     // Returning Fetched Records
     return fetchedRecords;
 }
+
 
 
 @end

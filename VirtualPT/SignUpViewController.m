@@ -7,14 +7,13 @@
 //
 
 #import "SignUpViewController.h"
-#import "FUIButton.h"
-#import "UIColor+FlatUI.h"
 #import "VPTAppDelegate.h"
 #import "user.h"
 
 @interface SignUpViewController ()
-@property (weak, nonatomic) IBOutlet FUIButton *cancelBtn;
-@property (weak, nonatomic) IBOutlet FUIButton *createBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (weak, nonatomic) IBOutlet UIButton *createBtn;
+
 @property (weak, nonatomic) IBOutlet UITextField *userId;
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 
@@ -27,6 +26,8 @@
 @end
 
 @implementation SignUpViewController
+@synthesize loginDelegate;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,9 +41,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];// Do any additional setup after loading the view.
+
+    // set delegate for core data
     VPTAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
 
+    // set delegate for Login
+    NSLog(@"self loginDelegate is %@", self.loginDelegate);
+    
     // set delegate for form validation
     [self.userId setDelegate:self];
     [self.userName setDelegate:self];
@@ -92,8 +98,32 @@
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     } else {
-        NSLog(@"save successfully: %@!", newUser);
+//        NSLog(@"save successfully: %@!", newUser);
     }
+    
+    
+    // save to Parse server
+    PFUser *user = [PFUser user];
+    user.username = self.userName.text;
+    user.password = self.password.text;
+    user.email = self.email.text;
+    // has to initialize pointer type to [NSNull null]
+    user[@"motivation"] = [NSNull null];
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // should put log-in into this success block -- they're asynrounous!!
+            // delegate back
+            if([self.loginDelegate respondsToSelector:@selector(signUpViewControllerDismissed:password:)])
+            {
+                NSLog(@"Start delegation");
+                [self.loginDelegate signUpViewControllerDismissed:self.userName.text password:self.password.text];
+            }
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog (@"%@", errorString);
+        }
+    }];
     
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];

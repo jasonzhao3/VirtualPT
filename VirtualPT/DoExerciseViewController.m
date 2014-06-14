@@ -9,11 +9,16 @@
 #import "DoExerciseViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+
+#define alertViewNext 0
+#define alertViewDone 1
+
 @interface DoExerciseViewController () {
     NSDate *pausedTime;
     BOOL isRunning;
     NSTimeInterval totalDuration;
     NSTimeInterval sectionDuration;
+    int currExerciseIndex;
 }
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeLabel;
@@ -23,7 +28,7 @@
 
 - (IBAction)pauseButton:(id)sender;
 - (IBAction)exitButton:(id)sender;
-- (IBAction)helpButton:(id)sender;
+
 
 
 @property (strong, nonatomic) NSTimer *countDownTimer;
@@ -45,22 +50,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    currExerciseIndex = 0;
+    PFObject *firstExercise = [self.exerciseList objectAtIndex:0];
     // Update Title:
     {
-        self.nameLabel.text = self.exerciseName;
+        self.nameLabel.text = firstExercise[@"name"];
     }
     
     // set up image / video view
     {
-        [self prepareImageAndVideo];
+        [self prepareImageAndVideo:firstExercise[@"videoURL"] imgURL:firstExercise[@"imgURL"]];
     }
     
     // start timer
     {
-        totalDuration = [self.duration doubleValue] * 5;
-        sectionDuration = [self.duration doubleValue];
-        [self updateDuration:totalDuration];
+        totalDuration = [self getTotalDuration];
+        sectionDuration = [firstExercise[@"duration"] floatValue];
+//        [self updateDuration:totalDuration];
         self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
         isRunning = true;
         }
@@ -74,20 +80,24 @@
 
 
 #pragma mark - prepare video/image
-- (void)prepareImageAndVideo
+- (void)prepareImageAndVideo:(NSString *)videoURL imgURL:(NSString *)imgURL
 {
-    if ([self.videoURL isEqualToString:@"null"]) {
-        UIImageView *previewImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.imgURL]];
-        previewImageView.frame = CGRectMake(30, 10, 200, 180);
+    if ([videoURL isEqualToString:@"null"]) {
+        UIImageView *previewImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imgURL]];        
+        previewImageView.frame = CGRectMake(0, 0, self.visualView.frame.size.width, self.visualView.frame.size.height);
         [self.visualView addSubview:previewImageView];
         self.videoPlayerController = NULL;
     } else {
         // layout and size
+//        NSLog(@"video URL is %@", videoURL);
         self.videoPlayerController.view.frame = self.visualView.bounds;
         self.videoPlayerController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.videoPlayerController.controlStyle = MPMovieControlStyleNone;
         // add movie player to view
         [self.visualView addSubview:self.videoPlayerController.view];
+        
+        // load video file
+        [self prepareLocalMp4Movie:videoURL];
         // do autostart
         [self.videoPlayerController prepareToPlay];
         self.videoPlayerController.shouldAutoplay = YES;
@@ -97,10 +107,10 @@
     }
 }
 
+// This setter is very essential!!
 - (MPMoviePlayerController *) videoPlayerController {
     if (!_videoPlayerController) {
         _videoPlayerController = [[MPMoviePlayerController alloc] init];
-        [self prepareLocalMp4Movie:self.videoURL];
     }
     return _videoPlayerController;
 }
@@ -112,16 +122,6 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)pauseButton:(id)sender {
     if (isRunning) {
@@ -142,15 +142,52 @@
 }
 
 - (IBAction)exitButton:(id)sender {
+    [self.countDownTimer invalidate];
+    //TODO: store the time completed into database
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)helpButton:(id)sender {
+#pragma mark - parse exercise
+- (NSNumber *)convertStringToNSNumber:(NSString *)numberString
+{
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *number = [f numberFromString:numberString];
+    return number;
+}
+
+- (float) getTotalDuration
+{
+    float sum = 0.0;
+    for (PFObject *exercise in self.exerciseList)
+    {
+        sum += [exercise[@"duration"] floatValue];
+    }
+    return sum;
 }
 
 
+- (void) loadExerciseInfo:(PFObject *)exercise
+{
+    // Update Title:
+    {
+        self.nameLabel.text = exercise[@"name"];
+    }
+    
+    // set up image / video view
+    {
+        [self prepareImageAndVideo:exercise[@"videoURL"] imgURL:exercise[@"imgURL"]];
+    }
+    
+    // start timer
+    {
+        sectionDuration = [exercise[@"duration"] floatValue];
+        self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+        isRunning = true;
+    }
 
-#pragma -- helper functions
+}
+#pragma mark - timer
 
 - (void)timerFired:(NSTimer *)timer
 {
@@ -160,6 +197,17 @@
         if (totalDuration <= 0.0) {
             [self.countDownTimer invalidate];
             [self playFinishedSound];
+            
+            UIAlertView *alert = [[UIAlertView alloc] init];
+            
+            [alert setTitle:@"Congratulations!"];
+            [alert setMessage:@"Awesome Job! You have finished today's exercise. Would you like to take a brief evaluation?"];
+            [alert setDelegate:self];
+            [alert addButtonWithTitle:@"Yes"];
+            [alert addButtonWithTitle:@"No"];
+            [alert setTag:alertViewDone];
+            [alert show];
+            
         } else if ((uint32_t)totalDuration % 60 == 0) {
             [self playIntervalSound];
         }
@@ -168,25 +216,79 @@
     sectionDuration -= [timer timeInterval];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self updateDuration:sectionDuration];
-        if (sectionDuration <= 0.0) {
+        if (sectionDuration <= 0.0 && totalDuration > 0.0) {
             [self.countDownTimer invalidate];
-            [self playFinishedSound];
+            if (self.videoPlayerController != NULL) {
+                [self.videoPlayerController stop];
+            }
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!"
+                                                            message:@"Awesome Job! You have just finished one exercise. Ready to go to the next exercise?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Go!"
+                                                  otherButtonTitles:nil];
+            alert.tag = alertViewNext;
+            [alert show];
+           
         } else if ((uint32_t)sectionDuration % 60 == 0) {
             [self playIntervalSound];
         }
     });
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == alertViewNext)
+    {
+        // load next exercise and reset section timer
+        ++currExerciseIndex;
+        [self loadExerciseInfo:[self.exerciseList objectAtIndex:currExerciseIndex]];
+    } else {
+        if (buttonIndex == 0)
+        {
+            // Yes, do something
+            [self performSegueWithIdentifier:@"goEvaluationSegue" sender:nil];
+        }
+        else if (buttonIndex == 1)
+        {
+            // No
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+
+    }
+    
+}
+
 
 - (void)updateDuration:(NSTimeInterval)interval
 {
     uint32_t hours = (uint32_t)( totalDuration / 3600.0 );
     uint32_t minutes = (uint32_t)( ( totalDuration - hours * 3600.0 ) / 60 );
     uint32_t seconds = (uint32_t)( totalDuration - hours * 3600.0 - minutes * 60.0 );
-    self.totalTimeLabel.text = [[NSString alloc] initWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+    NSString *timeStr = [[NSString alloc] initWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+    self.totalTimeLabel.attributedText = [self SetLabelAttributes:timeStr size:32];
+
     
     minutes = (uint32_t)( ( sectionDuration - hours * 3600.0 ) / 60 );
     seconds = (uint32_t)( sectionDuration - hours * 3600.0 - minutes * 60.0 );
-     self.sectionTimerLabel.text = [[NSString alloc] initWithFormat:@"%02d:%02d", minutes, seconds];
+    
+    timeStr = [[NSString alloc] initWithFormat:@"%02d:%02d", minutes, seconds];
+     self.sectionTimerLabel.attributedText = [self SetLabelAttributes:timeStr size:17];
+}
+
+
+- (NSMutableAttributedString *)SetLabelAttributes:(NSString *)input size:(Size)size {
+    
+    NSMutableAttributedString *labelAttributes = [[NSMutableAttributedString alloc] initWithString:input];
+    
+    UIFont *font=[UIFont fontWithName:@"GillSans-Bold" size:size];
+    
+    NSMutableParagraphStyle* style = [NSMutableParagraphStyle new];
+    style.alignment = NSTextAlignmentCenter;
+    
+    [labelAttributes addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, labelAttributes.length)];
+    [labelAttributes addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, labelAttributes.length)];
+    [labelAttributes addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, labelAttributes.length)];
+    
+    return labelAttributes;
 }
 
 

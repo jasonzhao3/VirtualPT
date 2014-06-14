@@ -15,13 +15,13 @@
  */
 
 #import "VPTMenuTableViewController.h"
-#import "MotivationViewController.h"
-#import "VPTHomeViewController.h"
 #import "VPTNavigationController.h"
-#import "TimerViewController.h"
-#import "ExerciseTableViewController.h"
+#import "UtilitiesController.h"
 #import "ProgressTableViewController.h"
-#import "MyExerciseTVC.h"
+#import "ExercisePreviewController.h"
+#import "LoginViewController.h"
+#import "AccomplishmentVC.h"
+#import <Parse/Parse.h>
 
 @interface VPTMenuTableViewController ()
 
@@ -36,39 +36,70 @@
   
     [super viewDidLoad];
     
+    
+    PFUser *currUser = [PFUser currentUser];
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    // set user profile image
+////    if (currUser)
+//    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [currUser[@"authData"];
+//    NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+//    [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
+//                                                                                                                                     NSLog(@"URL is %@", profilePictureURL);
+    
+    
+    
     self.tableView.tableHeaderView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
-        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = [UIImage imageNamed:@"frank.png"];
-        imageView.layer.masksToBounds = YES;
-        imageView.layer.cornerRadius = 50.0;
-        imageView.layer.borderColor = [UIColor whiteColor].CGColor;
-        imageView.layer.borderWidth = 3.0f;
-        imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        imageView.layer.shouldRasterize = YES;
-        imageView.clipsToBounds = YES;
-        
+//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
+//        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//        
+//        imageView.image = [UIImage imageNamed:@"kitten.png"];
+//        imageView.layer.masksToBounds = YES;
+//        imageView.layer.cornerRadius = 50.0;
+//        imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+//        imageView.layer.borderWidth = 3.0f;
+//        imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//        imageView.layer.shouldRasterize = YES;
+//        imageView.clipsToBounds = YES;
+//        
+//        //TODO: delegate this label to other UI
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = @"Frank Underwood";
+        label.text = currUser.username;
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
         [label sizeToFit];
         label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
-        [view addSubview:imageView];
+        
+        UIButton *profileButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
+        profileButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        
+        [profileButton setBackgroundImage:[UIImage imageNamed:@"kitten.png"] forState:UIControlStateNormal];
+        profileButton.layer.masksToBounds = YES;
+        profileButton.layer.cornerRadius = 50.0;
+        profileButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        profileButton.layer.borderWidth = 3.0f;
+        profileButton.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        profileButton.layer.shouldRasterize = YES;
+        profileButton.clipsToBounds = YES;
+        
+//        [view addSubview:imageView];
+        [view addSubview:profileButton];
+        [profileButton addTarget:self
+                     action:@selector(showProfile)
+           forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:label];
         view;
     });
 
-
-    self.tasksArray = [NSArray arrayWithObjects:@"Home", @"My Motivation", @"Exercises Library", @"My Exercises", @"Progress Tracker", @"Timer", nil];
+        [self addLinearGradientToView:self.tableView withColor:[UIColor greenColor] transparentToOpaque:YES];
+    self.tasksArray = [NSArray arrayWithObjects:@"My Motivations", @"My Training", @"My Accomplishments", @"Utilities", @"Log out", nil];
 }
 
 #pragma mark - Table view data source
@@ -143,26 +174,38 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    VPTNavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+    VPTNavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"rootNavigationController"];
     
     if (indexPath.section == 0 && indexPath.row == 0) {
-        VPTHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
-        navigationController.viewControllers = @[homeViewController];
+        UITabBarController *motivationTBC = [self.storyboard instantiateViewControllerWithIdentifier:@"motivationTBC"];
+        navigationController.viewControllers = @[motivationTBC];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
-        MotivationViewController *motivationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"motivationViewController"];
-        navigationController.viewControllers = @[motivationViewController];
-    } else if (indexPath.section == 0 && indexPath.row == 2){
-        ExerciseTableViewController *exerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"exerciseController"];
-        navigationController.viewControllers = @[exerciseController];
-    } else if (indexPath.section == 0 && indexPath.row == 3) {
-        MyExerciseTVC *myExerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"myExerciseController"];
+        ExercisePreviewController *myExerciseController = [self.storyboard instantiateViewControllerWithIdentifier:@"myExerciseController"];
         navigationController.viewControllers = @[myExerciseController];
-    } else if (indexPath.section == 0 && indexPath.row == 4){
-        ProgressTableViewController *progressController = [self.storyboard instantiateViewControllerWithIdentifier:@"progressController"];
-        navigationController.viewControllers = @[progressController];
-    } else if (indexPath.section == 0 && indexPath.row == 5) {
-        TimerViewController *timerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timerController"];
-        navigationController.viewControllers = @[timerViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 2){
+        AccomplishmentVC *accomplishmentController = [self.storyboard instantiateViewControllerWithIdentifier:@"accomplishmentController"];
+        navigationController.viewControllers = @[accomplishmentController];
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
+        UtilitiesController *utilityController = [self.storyboard instantiateViewControllerWithIdentifier:@"utilityController"];
+        navigationController.viewControllers = @[utilityController];
+    } else {
+        [PFUser logOut];
+//        PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+        LoginViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+        navigationController.viewControllers = @[loginController];
+    
+        
+        /* TODO: Alert Window
+        UIAlertView *alert = [[UIAlertView alloc] init];
+        
+        [alert setTitle:@"Confirm"];
+        [alert setMessage:@"Do you really want to logout?"];
+        [alert setDelegate:self];
+        [alert addButtonWithTitle:@"Yes"];
+        [alert addButtonWithTitle:@"No"];
+        [alert show];
+
+         */
     }
     
     self.frostedViewController.contentViewController = navigationController;
@@ -170,11 +213,82 @@
 }
 
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        
+        [PFUser logOut];
+        //        PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+//        LoginViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+//        navigationController.viewControllers = @[loginController];
+//        //        NSLog (@"Succesfully Log out!");
+//        
+//        Yang
+        // Yes, do something
+        NSLog(@"clicked yes!");
+        LoginViewController *lc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+        [self.navigationController pushViewController:lc animated:YES];
+        
+        //        [self.navigationController popViewControllerAnimated:YES];
+        //        [self performSegueWithIdentifier:@"backLoginSegue" sender:nil];
+    }
+    else if (buttonIndex == 1)
+    {
+        // No
+        NSLog(@"clicked no!");
+    }
+}
+
 #pragma mark -- view size
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 54;
 }
+
+
+
+#pragma mark - UI helper
+- (void)addLinearGradientToView:(UIView *)theView withColor:(UIColor *)theColor transparentToOpaque:(BOOL)transparentToOpaque
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    
+    //the gradient layer must be positioned at the origin of the view
+    CGRect gradientFrame = theView.frame;
+    gradientFrame.origin.x = 0;
+    gradientFrame.origin.y = 0;
+    gradient.frame = gradientFrame;
+    
+    //build the colors array for the gradient
+    NSArray *colors = [NSArray arrayWithObjects:
+//                       (id)[theColor CGColor],
+                       (id)[[theColor colorWithAlphaComponent:0.05f] CGColor],
+                       (id)[[theColor colorWithAlphaComponent:0.1f] CGColor],
+                       (id)[[theColor colorWithAlphaComponent:0.15f] CGColor],
+                       (id)[[theColor colorWithAlphaComponent:0.1f] CGColor],
+                       (id)[[theColor colorWithAlphaComponent:0.05f] CGColor],
+                       (id)[[UIColor clearColor] CGColor],
+                       nil];
+    
+    //reverse the color array if needed
+    if(transparentToOpaque)
+    {
+        colors = [[colors reverseObjectEnumerator] allObjects];
+    }
+    
+    //apply the colors and the gradient to the view
+    gradient.colors = colors;
+    
+    [theView.layer insertSublayer:gradient atIndex:0];
+}
+
+
+#pragma mark - profile button
+- (void)showProfile
+{
+    [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+}
+
 
 
 /*

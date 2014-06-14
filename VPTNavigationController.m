@@ -7,7 +7,7 @@
 //
 
 #import "VPTNavigationController.h"
-
+#import <Parse/Parse.h>
 @interface VPTNavigationController ()
 @end
 
@@ -17,8 +17,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
-}
+//    NSLog(@"load Navigation Controller!");
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // add swipe gesture to enable side Menu
+//        NSLog (@"User already logged in!");
+        [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+
+    } else {
+//        NSLog (@"User hasn't logged in yet!");
+        // Do not add swipe gesture
+    }
+
+    }
 
 #pragma mark -
 #pragma mark Gesture recognizer

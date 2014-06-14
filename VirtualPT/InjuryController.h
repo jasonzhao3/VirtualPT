@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "VPTBaseViewController.h"
+#import "VPTTabBarController.h"
 
-@interface InjuryController : UIViewController
-- (IBAction)cancelProfile:(id)sender;
+@interface InjuryController : VPTBaseViewController
+//- (IBAction)cancelProfile:(id)sender;
+//- (IBAction)nextButton:(id)sender;
 
 @end

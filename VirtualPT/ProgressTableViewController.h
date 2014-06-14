@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
+#import "VPTBaseViewController.h"
 
 @interface ProgressTableViewController : UITableViewController
 @property (nonatomic, strong) NSArray *progressList;
-- (IBAction)showMenu:(id)sender;
 
 @end

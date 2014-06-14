@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setCustomNavigationButton];
     
     self.progressList = [NSArray arrayWithObjects:@"Daily Exercise Hours", @"Daily Feelings", @"Recovery Process", nil];
 }
@@ -119,10 +120,33 @@
 }
 
 
-- (IBAction)showMenu:(id)sender {
+- (void)setCustomNavigationButton
+{
+    UIImage* img = [UIImage imageNamed:@"menu"];
+    CGRect frameimg = CGRectMake(0, 0, BAR_BUTTON_SIZE, BAR_BUTTON_SIZE);
+    UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
+    [someButton setBackgroundImage:img forState:UIControlStateNormal];
+    [someButton addTarget:self action:@selector(backToMenueSegue)
+         forControlEvents:UIControlEventTouchUpInside];
+    [someButton setShowsTouchWhenHighlighted:YES];
+    
+    UIBarButtonItem *backButton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
+    self.navigationItem.leftBarButtonItem=backButton;
+}
+
+- (void)backToMenueSegue
+{
     [self.view endEditing:YES];
     [self.frostedViewController.view endEditing:YES];
     
+    // Present the view controller
+    //
     [self.frostedViewController presentMenuViewController];
 }
+
+
+
+
+
+
 @end

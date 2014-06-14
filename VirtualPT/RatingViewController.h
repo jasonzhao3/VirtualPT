@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RatingViewController : UIViewController
+@interface RatingViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+- (IBAction)clickRatingButton:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *faceViews;
+
+- (IBAction)cancelButton:(id)sender;
+- (IBAction)doneButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITableView *evaluationTable;
+@property (weak, nonatomic) IBOutlet UILabel *positivePhrases;
 
 @end

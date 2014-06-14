@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Jason Zhao. All rights reserved.
 //
 
-#import "ExerciseTableViewController.h"
+#import "ExerciseBaseTVC.h"
 
-@interface MyExerciseTVC : ExerciseTableViewController
+@interface MyExerciseTVC : ExerciseBaseTVC
 @property (nonatomic, strong) NSArray *exerciseList;
 @end

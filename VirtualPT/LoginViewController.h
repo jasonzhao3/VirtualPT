@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SignUpViewController.h"
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate, LoginDelegate>
 - (IBAction)login:(id)sender;
+- (IBAction)fbLoginButton:(id)sender;
+- (IBAction)twitterLoginButton:(id)sender;
 
 @end

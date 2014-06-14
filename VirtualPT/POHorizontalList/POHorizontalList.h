@@ -20,7 +20,6 @@
 }
 
 @property (nonatomic, retain) UIScrollView *scrollView;
-
 @property (nonatomic, assign) id<POHorizontalListDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame title:(NSString *)title items:(NSMutableArray *)items;

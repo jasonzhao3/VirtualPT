@@ -46,10 +46,17 @@
         
         [title setFrame:textRect];
         [imageView setFrame:imageRect];
-//        [imageView setFrame:self.imageButton.frame];
+        //        [imageView setFrame:self.imageButton.frame];
         
         [self addSubview:title];
         [self addSubview:imageView];
+
+        // initialized to No
+        self.isSelected = NO;
+        self.checkView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clear"]];
+        // setFrame should be after set image
+        [self.checkView setFrame:CGRectMake(0.0, 0.0, 32.0, 32.0)];
+        [self addSubview:self.checkView];
     }
     
     return self;

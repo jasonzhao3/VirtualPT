@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "VPTNavigationController.h"
-#import "LoginViewController.h"
+
+@protocol LoginDelegate <NSObject>
+-(void) signUpViewControllerDismissed:(NSString *)username password:(NSString *)password;
+@end
+
 
 @interface SignUpViewController : UIViewController<UITextFieldDelegate>
+
+@property (nonatomic, assign) id <LoginDelegate> loginDelegate;
 - (IBAction)cancelSignUp:(id)sender;
 - (IBAction)addProfile:(id)sender;
 - (IBAction)createUser:(id)sender;

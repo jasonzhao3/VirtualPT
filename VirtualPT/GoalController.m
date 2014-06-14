@@ -10,7 +10,7 @@
 #import "MotivationViewController.h"
 
 @interface GoalController ()
-
+@property (weak, nonatomic) PFObject *motivation;
 @end
 
 @implementation GoalController
@@ -22,7 +22,18 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    VPTTabBarController * tabBar = (VPTTabBarController *)[self tabBarController];
+    self.motivation = tabBar.motivation;
+    
+
+    
+//    VPTTabBarController * tabBar = (VPTTabBarController *)[self tabBarController];
+//    [tabBar setTitle:@"My Goal"];
+    
+//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tmall_bg_main"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tmall_bg_main"]];
     [self createOptionList];
+    [self updateGoal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,11 +71,38 @@
     ListItem *item19= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Walk Dog.png"] text:@"Walk Dog"];
     ListItem *item20= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Exercise.png"] text:@"Exercise"];
     ListItem *item21= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Jump Rope.png"] text:@"Jump Rope"];
-      ListItem *item22= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Other.png"] text:@"Other"];
+    ListItem *item22= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"Other.png"] text:@"Other"];
   
     // last nil works as a sentinel for the mutable array
     optionList1 = [[NSMutableArray alloc] initWithObjects: item1, item2, item3, item4, item5, item6, item7, item8, item9,  nil];
     optionList2 = [[NSMutableArray alloc] initWithObjects:item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, nil];
+
+}
+
+
+- (void)updateGoal
+{
+    [self.motivation fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        //Again, be careful that we have to put everything in asynchrnous block
+        NSArray *goals = self.motivation[@"goal"];
+        NSLog(@"goals are %@", goals);
+        for (ListItem *item in optionList1) {
+            NSLog(@"item imageTitle is: %@", item.imageTitle);
+            if ([goals containsObject: item.imageTitle]) {
+                item.checkView.image = [UIImage imageNamed:@"check"];
+                item.isSelected = YES;
+            }
+            
+        }
+        for (ListItem *item in optionList2) {
+            if ([goals containsObject: item.imageTitle]) {
+                item.checkView.image = [UIImage imageNamed:@"check"];
+                item.isSelected = YES;
+            }
+
+        }
+        
+    }];
 
 }
 
@@ -86,6 +124,7 @@
     static NSString *cellIdentifier = @"motivationOptionCell";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -95,7 +134,7 @@
     POHorizontalList *list;
     
     if ([indexPath row] == 0) {
-        title = @"Daily Acitivities";
+        title = @"Daily Activities";
         
         list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 155.0) title:title items:optionList1];
     }
@@ -117,9 +156,19 @@
 #pragma mark  POHorizontalListDelegate
 
 - (void) didSelectItem:(ListItem *)item {
-    NSLog(@"Horizontal List Item %@ selected", item.imageTitle);
-    //TODO: after clicking, the image/button status should change
-    item.image =[UIImage imageNamed:@"select.png"];
+//    NSLog(@"Horizontal List Item %@ selected", item.imageTitle);
+    NSMutableArray *goals = self.motivation[@"goal"];
+    if (!item.isSelected){
+        item.checkView.image = [UIImage imageNamed:@"check"];
+        [goals addObject:item.imageTitle];
+    } else {
+        item.checkView.image = [UIImage imageNamed:@"clear"];
+        [goals removeObject:item.imageTitle];
+    }
+    
+    self.motivation[@"goal"] = goals;
+    NSLog(@"%@", self.motivation);
+
 }
 
 /*

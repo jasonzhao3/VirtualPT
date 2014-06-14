@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoalController.h"
+#import "VPTTabBarController.h"
 
-@interface InspirationController : UIViewController
-- (IBAction)faithButton:(id)sender;
+@interface InspirationController : GoalController
+@property (weak, nonatomic) IBOutlet UITableView *inspirationTableView;
+
 - (IBAction)saveButton:(id)sender;
 @end

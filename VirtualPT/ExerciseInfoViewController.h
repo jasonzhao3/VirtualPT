@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ExerciseInfoViewController : UIViewController
+#import "VPTBaseViewController.h"
+@interface ExerciseInfoViewController : VPTBaseViewController
 @property(strong, nonatomic) NSString *reps;
 @property(strong, nonatomic) NSString *hold;
 @property(strong, nonatomic) NSString *duration;

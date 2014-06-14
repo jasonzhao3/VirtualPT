@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "POHorizontalList.h"
-
+#import "VPTTabBarController.h"
 @interface GoalController : UIViewController <UITableViewDelegate, UITableViewDataSource, POHorizontalListDelegate> {
     NSMutableArray *optionList1;
     NSMutableArray *optionList2;
