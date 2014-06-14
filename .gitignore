@@ -1,0 +1,10 @@
+DerivedData/
+*.mp4
+*.png
+LogVideo/
+*.jpg
+scrapyHep2go/
+img/
+*.framework
+*.un~
+*.csv

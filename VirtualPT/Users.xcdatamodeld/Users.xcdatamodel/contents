@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DailyCheckin" representedClassName="DailyCheckin" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="checkinOfUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userHasDailyCheckin" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hold" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imgURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="instruction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="videoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exerciseBelongsToUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="userHasExercises" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Motivation" representedClassName="Motivation" syncable="YES">
+        <attribute name="q1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="motivationOfUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userHasMotivation" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userHasDailyCheckin" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DailyCheckin" inverseName="checkinOfUser" inverseEntity="DailyCheckin" syncable="YES"/>
+        <relationship name="userHasExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseBelongsToUsers" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="userHasMotivation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Motivation" inverseName="motivationOfUser" inverseEntity="Motivation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DailyCheckin" positionX="682" positionY="-832" width="128" height="103"/>
+        <element name="Exercise" positionX="394" positionY="-505" width="128" height="163"/>
+        <element name="Motivation" positionX="684" positionY="-657" width="128" height="148"/>
+        <element name="User" positionX="360" positionY="-756" width="128" height="163"/>
+    </elements>
+</model>

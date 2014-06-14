@@ -1,0 +1,44 @@
+<h1>Schedule Panel</h1>
+
+<p> Please schedule the Exercise Using following forms </p>
+
+
+<div>
+<%= form_for @schedule, url: schedule_schedules_path, :class => "form-inline"  do |f| %>   
+
+<div id="form-panel">
+
+    <div class="exercise-item">
+
+    <% users_array = @users.map {|user| [user["username"], user["objectId"]]} %>
+    <% exercises_array = @exercises.map {|exercise| [exercise["name"].downcase.capitalize, exercise["objectId"]]} %>
+    
+    <%= f.select :username, users_array %>
+    <%= f.select :exercise, exercises_array %>
+    <br>
+    <%= f.text_field :date, :placeholder => "Date", :style=>"width: 120px" %>
+    <%= f.text_field :reps, :placeholder => "Reps", :style=>"width: 120px"  %>
+    <%= f.text_field :hold, :placeholder => "Hold(seconds)", :style=>"width: 120px"  %>
+    <%= f.text_field :duration, :placeholder => "Duration(seconds/Set)", :style=>"width: 120px" %>
+    <%= f.text_field :sets, :placeholder => "Sets #", :style=>"width: 120px"  %>
+    </div>
+</div>
+
+ <div>
+ 	<%= f.submit "Add Exercise", :class => "btn btn-primary" %>
+ </div>
+
+<% end %>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+$('#schedule_date').datepicker();
+// $('#add_item').click(function(){
+// 	$('#form-panel').append($(".exercise-item").html());
+// });
+
+</script>

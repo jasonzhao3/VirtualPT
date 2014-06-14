@@ -1,0 +1,84 @@
+
+
+<p> Please schedule the Exercise Using following forms </p>
+
+
+<div>
+<%= form_for @schedule, url: schedule_schedules_path, :class => "form-inline"  do |f| %>   
+<!-- 
+	<div class="row">
+ 		<label>User Name </label>
+  		<label>Date</label>
+  		<label>Exercise </label>
+	</div> -->
+
+<div id="form-panel">
+    <div class="exercise-item">
+
+    <% users_array = @users.map {|user| [user["username"], user["objectId"]]} %>
+    <% exercises_array = @exercises.map {|exercise| [exercise["name"].downcase.capitalize, exercise["objectId"]]} %>
+    
+    <%= f.select :username, users_array %>
+    <%= f.text_field :date, :placeholder => "Date" %>
+    <%= f.select :exercise, exercises_array %>
+    		<button type="button" class="btn btn-primary">Remove</button>
+    	<!-- </div> -->
+    </div>
+
+</div>
+
+ <div>
+ 	<button type="button" class="btn btn-primary"  id="add_item">Add Exercise</button>
+ 	<%= f.submit "Schedule", :class => "btn btn-primary" %>
+ </div>
+
+<% end %>
+
+
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+$('#schedule_date').datepicker();
+$('#add_item').click(function(){
+	$('#form-panel').append($(".exercise-item").html());
+});
+
+</script>
+<!-- <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script> -->
+<!--<script type="text/javascript"> 
+    // Parse.initialize("L6SLBxrQtNVjvdO8TCaYH7rpMHStR832rJoTloW0", "CN9wifxib3XPrtM7HZVPSSjKifejQSRyJftj0g3n");
+    
+    // Parse.User.signUp("yangyang5", "123", {email:"yyy@email.com"});
+
+
+ //    console.log(newUser);
+ //    newUser.setUsername("yangyang");
+ //    newUser.setEmail("yzhao3@stanford.edu");
+ //    newUser.save({username:"yangyang"}).then(function(object) {
+ //    alert("yay! it worked");
+	// });
+
+
+    // var TestObject = Parse.Object.extend("TestObject");
+    // var testObject = new TestObject();
+    //   testObject.save({foo: "bar"}, {
+    //   success: function(object) {
+    //     $(".success").show();
+    //   },
+    //   error: function(model, error) {
+    //     $(".error").show();
+    //   }
+    // });
+
+
+//     var TestObject = Parse.Object.extend("TestObject");
+//     var testObject = new TestObject();
+//     testObject.save({foo: "bar"}).then(function(object) {
+//     alert("yay! it worked");
+// });
+  
+</script> -->
