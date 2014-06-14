@@ -6,3 +6,4 @@ LogVideo/
 scrapyHep2go/
 img/
 *.framework
+*.un~
