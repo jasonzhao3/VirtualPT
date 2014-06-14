@@ -7,3 +7,4 @@ scrapyHep2go/
 img/
 *.framework
 *.un~
+*.csv

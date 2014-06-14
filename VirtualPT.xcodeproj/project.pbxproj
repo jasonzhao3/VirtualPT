@@ -63,6 +63,7 @@
 		6B5BDA4A18FB97AC00B22E01 /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA4018FB97AC00B22E01 /* PNLineChart.m */; };
 		6B5BDA4B18FB97AC00B22E01 /* PNLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA4218FB97AC00B22E01 /* PNLineChartData.m */; };
 		6B5BDA4C18FB97AC00B22E01 /* PNLineChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BDA4418FB97AC00B22E01 /* PNLineChartDataItem.m */; };
+		6B6853A5194CD6EF008B2710 /* LOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B6853A4194CD6EF008B2710 /* LOG.md */; };
 		6B6A2128191D926D00F6224A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6A2127191D926D00F6224A /* Parse.framework */; };
 		6B6A212A191D92BB00F6224A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6A2129191D92BB00F6224A /* AudioToolbox.framework */; };
 		6B6A212C191D92C700F6224A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6A212B191D92C700F6224A /* CFNetwork.framework */; };
@@ -222,6 +223,7 @@
 		6B5BDA4218FB97AC00B22E01 /* PNLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartData.m; sourceTree = "<group>"; };
 		6B5BDA4318FB97AC00B22E01 /* PNLineChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChartDataItem.h; sourceTree = "<group>"; };
 		6B5BDA4418FB97AC00B22E01 /* PNLineChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartDataItem.m; sourceTree = "<group>"; };
+		6B6853A4194CD6EF008B2710 /* LOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LOG.md; sourceTree = "<group>"; };
 		6B6A2127191D926D00F6224A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		6B6A2129191D92BB00F6224A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6B6A212B191D92C700F6224A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -534,6 +536,7 @@
 				6B41965B192022B100A26F14 /* schedule.csv */,
 				6B2A59D21910B10800620E46 /* hep2go.csv */,
 				6B54B04B190C49810093FEF1 /* README.md */,
+				6B6853A4194CD6EF008B2710 /* LOG.md */,
 				6B9F25B3191DBE6E0004DFEE /* VPTAFParseAPIClient.h */,
 				6B9F25B4191DBE6E0004DFEE /* VPTAFParseAPIClient.m */,
 				6B54B05E190E2F6E0093FEF1 /* hep2go_doc */,
@@ -834,6 +837,7 @@
 				6B50CDDA1911ED4000405A83 /* WAND FLEXION.mp4 in Resources */,
 				6B2A59D31910B10800620E46 /* hep2go.csv in Resources */,
 				6B2A59DF1910C4DF00620E46 /* SimpleTableCell.xib in Resources */,
+				6B6853A5194CD6EF008B2710 /* LOG.md in Resources */,
 				6B50CDD01911CF6800405A83 /* Main.storyboard in Resources */,
 				6B54B04C190C49810093FEF1 /* README.md in Resources */,
 				6B54B05F190E2F6E0093FEF1 /* hep2go_doc in Resources */,
